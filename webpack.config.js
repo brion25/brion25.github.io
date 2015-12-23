@@ -1,5 +1,6 @@
 var webpack = require('webpack'),
-    path = require('path');
+    path = require('path'),
+    ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry:path.join(__dirname,'./app/app.js'),
@@ -17,7 +18,16 @@ module.exports = {
       {
         test:/\.jade$/,
         loader:"jade"
+      },
+      {
+        test:/\.scss$/,
+        loader : ExtractTextPlugin.extract('style-loader','css-loader!sass-loader')
       }
     ]
-  }
+  },
+  plugins:[
+    //new webpack.optimize.UglifyJsPlugin({minimize:true}),
+    new webpack.optimize.DedupePlugin(),
+    new ExtractTextPlugin('bundle.css')
+  ]
 }

@@ -5,6 +5,8 @@ export default Config;
 function Config(routeProvider){
   routeProvider
    .when('/', {
-    template: Home.view
+    template: Home.view,
+    controller : ['FactoryProfile',Home.controller],
+    controllerAs : 'home'
   })
 }
