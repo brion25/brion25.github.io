@@ -4,8 +4,12 @@
     <link rel="stylesheet" href="dist/bundle.css" />
     <title>@bartsis</title>
   </head>
-  <body ng-app="myPage">
-    <div ng-view></div>
+  <body ng-app="myPage" id="main-background" style="background-image : url('{{backgroundUrl}}')">
+    <div layout="row" layout-xs="column" layout-align="center center">
+      <div flex="75" id="views">
+        <div ng-view></div>
+      </div>
+    </div>
     <script src="dist/bundle.js"></script>
     <script type="text/javascript" src="http://platform.linkedin.com/in.js">
       api_key: 78khio5vckiotr

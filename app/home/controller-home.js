@@ -5,5 +5,5 @@ function HomeController(FactoryProfile){
   FactoryProfile.then((profile) => {
     console.log(profile);
     vm.profile = profile;
-  })
+  });
 }

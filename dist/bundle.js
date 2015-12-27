@@ -62,17 +62,27 @@
 
 	var _factoryProfile2 = _interopRequireDefault(_factoryProfile);
 
-	var _config = __webpack_require__(12);
+	var _factoryBackground = __webpack_require__(12);
+
+	var _factoryBackground2 = _interopRequireDefault(_factoryBackground);
+
+	var _config = __webpack_require__(13);
 
 	var _config2 = _interopRequireDefault(_config);
 
-	__webpack_require__(17);
+	__webpack_require__(19);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var ng = _angular2.default.module;
 
-	ng("myPage", [_angularRoute2.default, 'ngMaterial']).factory('FactoryProfile', ["$q", _factoryProfile2.default]).config(['$routeProvider', _config2.default]);
+	ng("myPage", [_angularRoute2.default, 'ngMaterial']).factory('FactoryBackground', ["$q", "$http", _factoryBackground2.default]).factory('FactoryProfile', ["$q", "$http", _factoryProfile2.default]).config(['$routeProvider', _config2.default]).run(['FactoryBackground', '$rootScope', function (FactoryBackground, rootScope) {
+	  FactoryBackground.then(function (backgroundUrl) {
+	    rootScope.backgroundUrl = backgroundUrl;
+	  }, function (error) {
+	    console.log("Error!!!");
+	  });
+	}]);
 
 /***/ },
 /* 1 */
@@ -57095,7 +57105,7 @@
 	});
 	exports.default = FactoryProfile;
 
-	function FactoryProfile(q) {
+	function FactoryProfile(q, http) {
 	  var defer = q.defer(),
 	      profile = null,
 	      currentDate = null,
@@ -57103,8 +57113,8 @@
 	    defer.notify('Getting LinkedIn Profile');
 	    try {
 	      profile = JSON.parse(localStorage['linkedinProfile']);
-	      clearInterval(interval);
 	      defer.resolve(profile);
+	      clearInterval(interval);
 	    } catch (err) {
 	      //err handler
 	    }
@@ -57115,6 +57125,35 @@
 
 /***/ },
 /* 12 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = FactoryBackground;
+
+	function FactoryBackground(q, http) {
+	  var defer = q.defer();
+
+	  http({
+	    method: 'GET',
+	    url: 'https://pixabay.com/api/?key=1818717-2312c300ca69a3d1b095dad0e&q=happy+new+year&orientation=horizontal&safesearch=true&editors_choice=true&min_width=1080'
+	  }).then(function (response) {
+	    var data = response.data,
+	        imageIndex = parseInt(Math.random() * data.hits.length);
+
+	    defer.resolve(data.hits[imageIndex].webformatURL.replace('_640.jpg', '_960.jpg'));
+	  }, function (error) {
+	    defer.reject(error);
+	  });
+
+	  return defer.promise;
+	}
+
+/***/ },
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -57123,7 +57162,7 @@
 	  value: true
 	});
 
-	var _index = __webpack_require__(13);
+	var _index = __webpack_require__(14);
 
 	var _index2 = _interopRequireDefault(_index);
 
@@ -57140,7 +57179,7 @@
 	}
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -57149,11 +57188,11 @@
 	  value: true
 	});
 
-	var _viewHome = __webpack_require__(14);
+	var _viewHome = __webpack_require__(15);
 
 	var _viewHome2 = _interopRequireDefault(_viewHome);
 
-	var _controllerHome = __webpack_require__(22);
+	var _controllerHome = __webpack_require__(18);
 
 	var _controllerHome2 = _interopRequireDefault(_controllerHome);
 
@@ -57165,10 +57204,10 @@
 	};
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var jade = __webpack_require__(15);
+	var jade = __webpack_require__(16);
 
 	module.exports = function template(locals) {
 	var buf = [];
@@ -57179,7 +57218,7 @@
 	}
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -57399,7 +57438,7 @@
 	    throw err;
 	  }
 	  try {
-	    str = str || __webpack_require__(16).readFileSync(filename, 'utf8')
+	    str = str || __webpack_require__(17).readFileSync(filename, 'utf8')
 	  } catch (ex) {
 	    rethrow(err, null, lineno)
 	  }
@@ -57431,30 +57470,13 @@
 
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports) {
 
 	/* (ignored) */
 
 /***/ },
-/* 17 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	__webpack_require__(18);
-
-/***/ },
 /* 18 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -57471,6 +57493,20 @@
 	    vm.profile = profile;
 	  });
 	}
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	__webpack_require__(20);
+
+/***/ },
+/* 20 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);
