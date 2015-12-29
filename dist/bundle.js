@@ -57214,7 +57214,7 @@
 	var jade_mixins = {};
 	var jade_interp;
 
-	buf.push("<div layout=\"row\" layout-sm=\"column\" layout-align=\"space-around\"><md-progress-circular md-mode=\"indeterminate\" ng-hide=\"home.profile\"></md-progress-circular><div flex=\"\" ng-show=\"home.profile\"><div layout=\"row\" layout-sm=\"column\" layout-wrap=\"\" layout-align=\"space-around\" class=\"text-center\"><div flex=\"grow\"><img src=\"{{home.profile.pictureUrls.values[0]}}\" id=\"profile-picture\"></div><h1 flex=\"grow\" ng-bind=\"home.profile.formattedName\" id=\"profile-name\" class=\"md-headline\"></h1><h2 flex=\"grow\" ng-bind=\"home.profile.headline\" id=\"profile-job\" class=\"md-subhead\"></h2></div></div></div>");;return buf.join("");
+	buf.push("<div layout=\"row\" layout-sm=\"column\" layout-align=\"space-around\"><md-progress-circular md-mode=\"indeterminate\" ng-hide=\"home.profile\"></md-progress-circular><div flex=\"\" ng-show=\"home.profile\"><div layout=\"column\" layout-wrap=\"\" layout-align=\"space-around\" class=\"text-center\"><div flex=\"\"><img src=\"{{home.profile.pictureUrls.values[0]}}\" id=\"profile-picture\"></div><h1 flex=\"\" ng-bind=\"home.profile.formattedName\" id=\"profile-name\" class=\"md-headline text\"></h1><h2 flex=\"\" ng-bind=\"home.profile.headline\" id=\"profile-job\" class=\"md-subhead text\"></h2><p flex=\"\" ng-bind=\"home.profile.summary\" class=\"text\"></p></div></div></div>");;return buf.join("");
 	}
 
 /***/ },

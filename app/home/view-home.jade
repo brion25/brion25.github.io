@@ -1,8 +1,9 @@
 div(layout="row" layout-sm="column" layout-align="space-around")
   md-progress-circular(md-mode="indeterminate" ng-hide="home.profile")
   div(flex="" ng-show="home.profile")
-    div(layout="row" layout-sm="column" layout-wrap="" layout-align="space-around").text-center
-      div(flex="grow")
+    div(layout="column" layout-wrap="" layout-align="space-around").text-center
+      div(flex="")
         img(src="{{home.profile.pictureUrls.values[0]}}")#profile-picture
-      h1(flex="grow" ng-bind="home.profile.formattedName")#profile-name.md-headline
-      h2(flex="grow" ng-bind="home.profile.headline")#profile-job.md-subhead
+      h1(flex="" ng-bind="home.profile.formattedName")#profile-name.md-headline.text
+      h2(flex="" ng-bind="home.profile.headline")#profile-job.md-subhead.text
+      p(flex="" ng-bind="home.profile.summary").text

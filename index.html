@@ -1,12 +1,13 @@
 <!doctype html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="dist/bundle.css" />
     <title>@bartsis</title>
   </head>
   <body ng-app="myPage" id="main-background" style="background-image : url('{{backgroundUrl}}')">
     <div layout="row" layout-xs="column" layout-align="center center">
-      <div flex="75" id="views">
+      <div flex="75" id="views" layout-padding>
         <div ng-view></div>
       </div>
     </div>
