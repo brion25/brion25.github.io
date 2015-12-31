@@ -13,7 +13,7 @@ function FactoryProfile(q,http){
         }catch(err){
           //err handler
         }
-      },1000);
+      },2000);
 
   return defer.promise;
 }

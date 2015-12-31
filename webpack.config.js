@@ -26,7 +26,7 @@ module.exports = {
     ]
   },
   plugins:[
-    //new webpack.optimize.UglifyJsPlugin({minimize:true}),
+    new webpack.optimize.UglifyJsPlugin({minimize:true}),
     new webpack.optimize.DedupePlugin(),
     new ExtractTextPlugin('bundle.css')
   ]
