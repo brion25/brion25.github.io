@@ -1,10 +1,47 @@
 <!doctype html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="dist/bundle.css" />
     <title>@bartsis</title>
   </head>
-  <body ng-app="myPage">
-    <div ng-view></div>
+  <body ng-app="myPage" class="main-background" style="background-image : url('{{backgroundUrl}}')">
+    <div layout="row" layout-xs="column" layout-align="center center" class="main-background" style="background-image : url('{{backgroundUrl}}')">
+      <div flex="75" id="views" layout-padding>
+        <div ng-view></div>
+      </div>
+    </div>
     <script src="dist/bundle.js"></script>
+    <script type="text/javascript" src="http://platform.linkedin.com/in.js">
+      api_key: 78khio5vckiotr
+      authorize: true
+      onLoad: storeDataFromLinkedIN
+    </script>
+    <script type="text/javascript">
+      function storeDataFromLinkedIN(){
+        IN.API.Profile("me")
+          .fields(["firstName", "lastName","maidenName","formattedName","location","positions","picture-urls::(original)", "headline", "summary"])
+          .result(function(result) {
+            if(localStorage){
+              var positionsLength = result.values[0].positions._total,
+                  temp = []
+                  positions = [];
+
+              for(var i = 0 ; i < positionsLength / 2 ; i++){
+                temp.push(result.values[0].positions.values[i]);
+              }
+              positions.push(temp);
+              temp = [];
+              for(var i = parseInt(positionsLength / 2) ; i < positionsLength ; i++){
+                temp.push(result.values[0].positions.values[i]);
+              }
+              positions.push(temp);
+
+              result.values[0].positions.values = positions;
+              localStorage['linkedinProfile'] = JSON.stringify(result.values[0]);
+            }
+          });
+      }
+    </script>
   </body>
 </html>

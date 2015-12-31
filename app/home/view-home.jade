@@ -1,5 +1,32 @@
-h1
-  span Hi! My Name is JC Gomez, but maybe you know me as 
-  a(href="https://twitter.com/bartsis") @bartsis
-  span  or maybe by 
-  a(href="https://github.com/brion25") @brion25
+div(layout="row" layout-sm="column" layout-align="center center")
+  md-progress-circular(md-mode="indeterminate" ng-hide="home.profile")
+  div(flex="" ng-show="home.profile")
+    div(layout="column" layout-wrap="" layout-align="space-around").text-center
+      div(flex="")
+        img(src="{{home.profile.pictureUrls.values[0]}}")#profile-picture
+      h1(flex="" ng-bind="home.profile.formattedName")#profile-name.md-headline.text
+      h2(flex="" ng-bind="home.profile.headline")#profile-job.md-subhead.text
+      h3(flex="")#github-contributions-header.text
+        span These are my Github Contrinutions 
+        small(hide-gt-sm="") (scroll to see it complete)
+      div(flex="")#github-contributions-img
+        img(src="http://ghchart.rshah.org/brion25")
+    div(layout="column" layout-wrap="" layout-align="space-around" hide-sm="").text.text-center
+      div(flex="")
+        h2.header Summary:
+        p(ng-bind="home.profile.summary").content
+      div(flex="")
+        h2.header Job History:
+        div(layout="row" layout-wrap="" layout-align="center start")
+          div(flex="" layout="column" ng-repeat="positions in home.profile.positions.values")#job-history
+            md-card(ng-repeat="position in positions").position-card
+              md-card-title
+                md-card-title-text
+                  span(ng-bind="position.title").md-headline
+                  span(ng-bind-template="at {{position.company.name}}").md-subhead
+              md-card-content
+                div(layout="column" layout-wrap="" layout-align="center center")
+                  div(flex="")
+                    md-button(ng-click="position.showSummary = !position.showSummary" ng-bind-template="{{(position.showSummary) ? 'Hide' : 'Show'}} summary").position-show-summary.md-raised
+                  div(flex="" ng-show="position.showSummary" ng-bind="position.summary")
+          
