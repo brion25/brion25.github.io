@@ -1,4 +1,4 @@
 node_modules
 *.log
 .DS_Store
-./versions/**/dist/
+**/*.hot-update.*

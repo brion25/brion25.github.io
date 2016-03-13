@@ -1,0 +1,31 @@
+/*
+VARIABLES
+*/
+$animationTiming : .5s;
+$profileImageLandingSize : 10.5em;
+
+/*
+COLOR_NAMES
+*/
+$blue : #27363B;
+$red : #EB4960;
+
+@import "app/animations";
+@import "app/loading/loading";
+
+.center-text{
+  text-align: center;
+}
+
+.hide{
+  display: none;
+}
+
+.content{
+  display: flex;
+  justify-content: center;
+}
+
+body{
+  background-color: $blue;
+}
