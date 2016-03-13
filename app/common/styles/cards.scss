@@ -1,0 +1,25 @@
+.card{
+  border-radius: 0.25em;
+  .card-header, .card-content{
+    padding: 0.5em;
+  }
+  .card-header{
+    color : $lightBlue;
+    h2{
+      font-weight: lighter;
+      font-family: sans-serif;
+    }
+  }
+}
+
+.main-card{
+  background-color: $pink;
+  animation-name: show-cards;
+  animation-duration: $animationTiming;
+  .card-header{
+    background-color: $lightPink;
+    h2{
+      margin:0;
+    }
+  }
+}

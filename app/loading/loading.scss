@@ -6,11 +6,9 @@
   }
   .profile-image-loading{
     width : 0em;
-    border-radius: 50%;
   }
   .profile-image-loaded{
     width: $profileImageLandingSize;
-    border-radius: 50%;
     transform: rotate(360deg);
   }
   .loading{

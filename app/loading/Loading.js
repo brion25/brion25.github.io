@@ -1,6 +1,11 @@
 import React,{
   Component
 } from 'react';
+
+import {
+  browserHistory
+} from 'react-router';
+
 import classNames from 'classnames';
 import CircularProgress from 'material-ui/lib/circular-progress';
 
@@ -44,6 +49,9 @@ class Loading extends Component{
           self.setState({
             loadHome:true
           });
+          setTimeout(function () {
+            browserHistory.push('/home');
+          }, 501);
         }, 1000);
       }
     }
@@ -58,7 +66,8 @@ class Loading extends Component{
               'profile-image-loaded' : loaded,
               'loading-home':self.state.loadHome
             },
-            'profile-image'
+            'profile-image',
+            'rounded'
           )
         } />);
 

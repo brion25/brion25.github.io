@@ -1,0 +1,20 @@
+.container{
+  display: flex;
+}
+
+.center-content{
+  justify-content: center;
+}
+
+.column{
+  flex-direction: column;
+}
+
+.row{
+  flex-direction: row;
+}
+
+.full-width{
+  width: 100%;
+  max-width: 960px;
+}
