@@ -6,12 +6,26 @@
   justify-content: center;
 }
 
+.center-me{
+  align-self: center;
+}
+
+.center-items{
+  align-items: center;
+}
+
 .column{
+  @extend .container;
   flex-direction: column;
 }
 
 .row{
+  @extend .container;
   flex-direction: row;
+}
+
+.wrap-content{
+  flex-wrap:wrap;
 }
 
 .full-width{

@@ -1,6 +1,9 @@
 .card{
   border-radius: 0.25em;
-  .card-header, .card-content{
+  margin:1em 0;
+  animation-name: flip-cards-1;
+  animation-duration: $animationTiming;
+  .card-header{
     padding: 0.5em;
   }
   .card-header{
@@ -8,18 +11,21 @@
     h2{
       font-weight: lighter;
       font-family: sans-serif;
+      margin:0;
     }
   }
 }
 
-.main-card{
+.card-style-1{
   background-color: $pink;
-  animation-name: show-cards;
-  animation-duration: $animationTiming;
   .card-header{
     background-color: $lightPink;
-    h2{
-      margin:0;
-    }
+  }
+}
+
+.card-style-2{
+  background-color: $pink;
+  .card-header{
+    background-color: $lightPink;
   }
 }

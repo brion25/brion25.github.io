@@ -17,7 +17,7 @@
       if(window.localStorage) window.localStorage.setItem('linkedinProfile','');
       function storeDataFromLinkedIN(){
         IN.API.Profile("me")
-          .fields(["firstName", "lastName","maidenName","formattedName","location","positions","picture-urls::(original)", "headline", "summary"])
+          .fields(["firstName", "lastName","maidenName","formattedName","location","positions","picture-urls::(original)", "headline", "summary","email-address","public-profile-url"])
           .result(function(result) {
             if(window.localStorage){
               window.localStorage.setItem('linkedinProfile',JSON.stringify(result.values[0]));

@@ -1,7 +1,46 @@
 .home{
   @extend .full-width;
+  perspective: 1000px;
+
+  .profile{
+    padding:0.5em;
+  }
 
   .profile-image{
     width:8em;
+    margin-right: 1em;
   }
+  .profile-header{
+    font-size: 2em;
+    margin-top:0.5em;
+  }
+
+  .profile-subheader{
+    margin-bottom:0.5em;
+    font-size: 1.25em;
+  }
+
+  .profile-summary{
+    color: $blue;
+    @media(min-width: 640px){
+      flex : 1;
+    }
+  }
+
+  .profile-option{
+    flex : 1 auto;
+    padding: 0.5em;
+    font-size: 1em;
+    background-color: $lightPink;
+    transition: background $animationTiming cubic-bezier(0, 0, 0.2, 1);
+    color : $blue;
+    border:none;
+    &:active{
+      background: $strongPink;
+    }
+    &:not(:last-child){
+      border-right: 2px solid $pink;
+    }
+  }
+
 }

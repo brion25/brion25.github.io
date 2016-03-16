@@ -1,8 +1,26 @@
-@keyframes show-cards{
-  from{
-    transform: rotateX(90deg);
+@keyframes flip-cards-1{
+  0%{
+    transform: rotateX(-90deg);
   }
-  to{
+  80%{
+    transform: rotateX(10deg);
+  }
+  90%{
+    transform: rotateX(-10deg);
+  }
+  90%{
+    transform: rotateX(5deg);
+  }
+  100%{
     transform: rotateX(0deg);
+  }
+}
+
+@keyframes flip-cards-2{
+  from {
+    transform: translateY(2.5em) rotateX(-80deg);
+  }
+  to {
+    transform: translateY(0em) rotateX(0deg);
   }
 }
