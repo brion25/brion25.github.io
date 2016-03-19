@@ -1,4 +1,5 @@
 .home{
+  @extend .justify-center;
   @extend .full-width;
   perspective: 1000px;
 
@@ -25,6 +26,14 @@
     @media(min-width: 640px){
       flex : 1;
     }
+  }
+
+  .profile-card{
+    transition: transform $animationTiming;
+  }
+
+  .flip-profile-card{
+    transform: rotateX(-5deg);
   }
 
   .profile-option{

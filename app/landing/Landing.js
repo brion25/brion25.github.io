@@ -9,6 +9,7 @@ import {
 
 import Loading from './../loading/Loading';
 import Home from './../home/Home';
+import Resume from './../resume/Resume';
 
 class Landing extends Component{
   render(){
@@ -16,6 +17,7 @@ class Landing extends Component{
       <Router history={browserHistory}>
         <Route path="/" component={Loading}/>
         <Route path="/home" component={Home}/>
+        <Route path="/resume" component={Resume}/>
       </Router>
     );
   }

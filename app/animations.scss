@@ -1,15 +1,15 @@
 @keyframes flip-cards-1{
   0%{
-    transform: rotateX(-90deg);
+    transform: rotateX(90deg);
   }
   80%{
-    transform: rotateX(10deg);
-  }
-  90%{
     transform: rotateX(-10deg);
   }
   90%{
-    transform: rotateX(5deg);
+    transform: rotateX(10deg);
+  }
+  90%{
+    transform: rotateX(-5deg);
   }
   100%{
     transform: rotateX(0deg);

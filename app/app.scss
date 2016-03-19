@@ -3,6 +3,10 @@
 @import "app/loading/loading";
 @import "app/home/home";
 
+html, body, #my-page{
+  height:100%;
+}
+
 body{
   background-color: $blue;
   font-family: sans-serif;
@@ -12,4 +16,8 @@ body{
 h1,h2,h3,h4,h5,h6{
   margin : 0;
   font-weight: bolder;
+}
+
+.justify-center{
+  justify-content: center;
 }

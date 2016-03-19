@@ -2,6 +2,10 @@ import React, {
   Component
 } from 'react';
 
+import {
+  browserHistory
+} from 'react-router';
+
 import classNames from 'classnames';
 
 import Card from './../common/components/Card';
@@ -14,13 +18,14 @@ class Home extends Component{
       options : [
         {
           name : 'Resume',
-          url : 'resume'
+          url : '/resume'
         },
         {
           name : 'Github',
-          url : 'github'
+          url : '/github'
         }
-      ]
+      ],
+      cardStyle : ['card-style-1','profile-card']
     }
   }
 
@@ -28,7 +33,7 @@ class Home extends Component{
     console.log(this.state);
     return (
       <div className={classNames('column','home')}>
-        <Card cardHeader={'Summary'} cardStyle={'card-style-1'}>
+        <Card cardHeader={'Summary'} cardStyle={this.state.cardStyle}>
           <div className={classNames('row','center-items','wrap-content','center-content','profile')}>
             <img className={classNames('rounded','profile-image')} src={this.state.profile.pictureUrls.values[0]} />
             <div className={classNames('container','column', 'profile-summary')}>
@@ -45,9 +50,36 @@ class Home extends Component{
     );
   }
 
+  overCard(flipCard){
+    let cardStyles = this.state.cardStyle;
+    if(flipCard){
+      cardStyles.push('flip-profile-card');
+      this.setState({
+        cardStyle : cardStyles
+      });
+    }else{
+      cardStyles.splice(cardStyles.length - 1,1);
+      this.setState({
+        cardStyle : cardStyles
+      });
+    }
+  }
+
+  changePath(url){
+    browserHistory.push(url);
+  }
+
   renderOptions(option, i){
     return (
-      <button key={'option-'+i} className={classNames('profile-option')}>{option.name}</button>
+      <button
+        key={'option-'+i}
+        onMouseOver={this.overCard.bind(this,true)}
+        onMouseOut={this.overCard.bind(this,false)}
+        className={classNames('profile-option')}
+        onClick={this.changePath.bind(this,option.url)}
+      >
+          {option.name}
+      </button>
     );
   }
 }
