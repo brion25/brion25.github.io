@@ -6,6 +6,32 @@
   justify-content: center;
 }
 
+@media(min-width: 641px){
+  .md{
+    &-center-content{
+      justify-content: center;
+    }
+    &-left-content{
+      justify-content: flex-start;
+    }
+  }
+}
+
+@media(max-width: 640px){
+  .sm{
+    &-center-content{
+      justify-content: center;
+    }
+    &-left-content{
+      justify-content: flex-start;
+    }
+  }
+}
+
+.left-content{
+  justify-content: flex-start;
+}
+
 .center-me{
   align-self: center;
 }

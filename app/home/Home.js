@@ -13,19 +13,24 @@ import Card from './../common/components/Card';
 class Home extends Component{
   constructor(props){
     super(props);
+    let self = this;
     this.state = {
       profile : JSON.parse(window.localStorage.getItem('linkedinProfile')),
       options : [
         {
           name : 'Resume',
-          url : '/resume'
+          url : '/resume',
+          callback : self.changePath,
+          parent : self
         },
         {
           name : 'Github',
-          url : '/github'
+          url : '/github',
+          callback : self.changePath,
+          parent : self
         }
       ],
-      cardStyle : ['card-style-1','profile-card']
+      cardStyle : {'almost-flip-card' : null, 'totally-flip-card' : null}
     }
   }
 
@@ -33,7 +38,7 @@ class Home extends Component{
     console.log(this.state);
     return (
       <div className={classNames('column','home')}>
-        <Card cardHeader={'Summary'} cardStyle={this.state.cardStyle}>
+        <Card cardHeader={'Summary'} cardStyle={['card-style-1','profile-card',this.state.cardStyle]} options={this.state.options}>
           <div className={classNames('row','center-items','wrap-content','center-content','profile')}>
             <img className={classNames('rounded','profile-image')} src={this.state.profile.pictureUrls.values[0]} />
             <div className={classNames('container','column', 'profile-summary')}>
@@ -42,45 +47,20 @@ class Home extends Component{
               <div>{this.state.profile.summary}</div>
             </div>
           </div>
-          <div className={classNames('row','center-items','wrap-content','center-content')}>
-            {this.state.options.map(this.renderOptions.bind(this))}
-          </div>
         </Card>
       </div>
     );
   }
 
-  overCard(flipCard){
-    let cardStyles = this.state.cardStyle;
-    if(flipCard){
-      cardStyles.push('flip-profile-card');
-      this.setState({
-        cardStyle : cardStyles
-      });
-    }else{
-      cardStyles.splice(cardStyles.length - 1,1);
-      this.setState({
-        cardStyle : cardStyles
-      });
-    }
-  }
-
   changePath(url){
-    browserHistory.push(url);
-  }
-
-  renderOptions(option, i){
-    return (
-      <button
-        key={'option-'+i}
-        onMouseOver={this.overCard.bind(this,true)}
-        onMouseOut={this.overCard.bind(this,false)}
-        className={classNames('profile-option')}
-        onClick={this.changePath.bind(this,option.url)}
-      >
-          {option.name}
-      </button>
-    );
+    let cardStyles = this.state.cardStyle;
+    cardStyles['totally-flip-card'] = true;
+    this.setState({
+      cardStyle : cardStyles
+    });
+    setTimeout(function () {
+      browserHistory.push(url);
+    }, 501);
   }
 }
 

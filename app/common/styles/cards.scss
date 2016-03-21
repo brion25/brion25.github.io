@@ -1,8 +1,9 @@
 .card{
   border-radius: 0.25em;
   margin:1em 0;
-  animation-name: flip-cards-1;
+  animation-name: flip-cards;
   animation-duration: $animationTiming;
+  transition: transform $animationTiming;
   .card-header{
     padding: 0.5em;
   }
@@ -16,16 +17,45 @@
   }
 }
 
+.almost-flip-card{
+  transform: rotateX(-5deg);
+}
+
+.totally-flip-card{
+  transform: rotateX(-90deg);
+}
+
+.card-option{
+  flex : 1 auto;
+  padding: 0.5em;
+  font-size: 1em;
+  transition: background $animationTiming cubic-bezier(0, 0, 0.2, 1);
+  color : $blue;
+  border:none;
+  &:active{
+    background: $strongPink;
+  }
+  &:not(:last-child){
+    border-right: 2px solid $pink;
+  }
+}
+
 .card-style-1{
   background-color: $pink;
   .card-header{
     background-color: $lightPink;
   }
+  .card-option{
+    background-color: $lightPink;
+  }
 }
 
 .card-style-2{
-  background-color: $pink;
+  background-color: $orange;
   .card-header{
-    background-color: $lightPink;
+    background-color: $lightOrange;
+  }
+  .card-option{
+    background-color: $lightOrange;
   }
 }

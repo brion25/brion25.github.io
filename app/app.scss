@@ -1,7 +1,7 @@
 @import "app/common/styles/main";
-@import "app/animations";
 @import "app/loading/loading";
 @import "app/home/home";
+@import "app/resume/resume";
 
 html, body, #my-page{
   height:100%;
@@ -11,13 +11,10 @@ body{
   background-color: $blue;
   font-family: sans-serif;
   font-weight: lighter;
+  color: $blue;
 }
 
 h1,h2,h3,h4,h5,h6{
   margin : 0;
   font-weight: bolder;
-}
-
-.justify-center{
-  justify-content: center;
 }

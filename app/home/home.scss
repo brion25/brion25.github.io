@@ -1,5 +1,5 @@
 .home{
-  @extend .justify-center;
+  @extend .center-content;
   @extend .full-width;
   perspective: 1000px;
 
@@ -22,34 +22,8 @@
   }
 
   .profile-summary{
-    color: $blue;
     @media(min-width: 640px){
       flex : 1;
     }
   }
-
-  .profile-card{
-    transition: transform $animationTiming;
-  }
-
-  .flip-profile-card{
-    transform: rotateX(-5deg);
-  }
-
-  .profile-option{
-    flex : 1 auto;
-    padding: 0.5em;
-    font-size: 1em;
-    background-color: $lightPink;
-    transition: background $animationTiming cubic-bezier(0, 0, 0.2, 1);
-    color : $blue;
-    border:none;
-    &:active{
-      background: $strongPink;
-    }
-    &:not(:last-child){
-      border-right: 2px solid $pink;
-    }
-  }
-
 }
