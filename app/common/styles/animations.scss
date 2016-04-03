@@ -15,3 +15,15 @@
     transform: rotateX(0deg);
   }
 }
+
+@keyframes bouncing-position-arrow{
+  0%, 20%, 50%, 80%, 100% {
+    padding-right:1em;
+  }
+  40% {
+    padding-right:3em;
+  }
+  60% {
+    padding-right:2em;
+  }
+}

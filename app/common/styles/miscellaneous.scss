@@ -14,3 +14,15 @@
   display: flex;
   justify-content: center;
 }
+
+.line:not(:last-child){
+  margin-bottom: 15px;
+}
+
+.arrow {
+  width: 1em;
+  height: 1em;
+  border-top: 0.5em solid black;
+  border-right: 0.5em solid black;
+  transform: rotate(45deg);
+}

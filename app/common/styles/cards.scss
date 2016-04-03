@@ -3,7 +3,8 @@
   margin:1em 0;
   animation-name: flip-cards;
   animation-duration: $animationTiming;
-  transition: transform $animationTiming;
+  transition: transform $animationTiming, height $animationTiming;
+  overflow: auto;
   .card-header{
     padding: 0.5em;
   }
