@@ -5,25 +5,24 @@
 
   .profile{
     padding:0.5em;
-  }
+    &-image{
+      width:8em;
+      margin-right: 1em;
+    }
+    &-header{
+      font-size: 2em;
+      margin-top:0.5em;
+    }
 
-  .profile-image{
-    width:8em;
-    margin-right: 1em;
-  }
-  .profile-header{
-    font-size: 2em;
-    margin-top:0.5em;
-  }
+    &-subheader{
+      margin-bottom:0.5em;
+      font-size: 1.25em;
+    }
 
-  .profile-subheader{
-    margin-bottom:0.5em;
-    font-size: 1.25em;
-  }
-
-  .profile-summary{
-    @media(min-width: 640px){
-      flex : 1;
+    &-summary{
+      @media(min-width: 640px){
+        flex : 1;
+      }
     }
   }
 }

@@ -26,3 +26,11 @@
   border-right: 0.5em solid black;
   transform: rotate(45deg);
 }
+
+a{
+  padding:0.25em 0.5em;
+  color:$lightPurple;
+  &:visited{
+    color:$lightPurple;
+  }
+}

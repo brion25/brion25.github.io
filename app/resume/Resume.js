@@ -2,6 +2,10 @@ import React,{
   Component
 } from 'react';
 
+import {
+  browserHistory
+} from 'react-router';
+
 import classNames from 'classnames';
 import moment from 'moment';
 
@@ -20,7 +24,7 @@ class Resume extends Component{
       publicProfileUrl : profile.publicProfileUrl,
       emailAddress : profile.emailAddress,
       positions : profile.positions,
-      scrollY : null
+      cardStyle : {'totally-flip-card' : null}
     }
   }
 
@@ -34,7 +38,7 @@ class Resume extends Component{
               <div className={classNames('column', 'resume-header')}>
                 <h2>{this.state.formattedName}</h2>
                 <h3>{this.state.headline}</h3>
-                <div className={classNames('row','resume-contact')}>
+                <div className={classNames('row','resume-contact','wrap-content')}>
                   <a href={this.state.publicProfileUrl}>See LinkedIn Profile</a>
                   <a href={'mailto://'+this.state.emailAddress}>{this.state.emailAddress}</a>
                 </div>
@@ -55,13 +59,12 @@ class Resume extends Component{
 
   renderPositions(position, i){
     let startDate = moment(position.startDate).format('MMMM YYYY'),
-        endDate = null,
-        summary = position.summary.split('\n');
+        endDate = null;
 
     if(position.isCurrent) endDate = 'Present';
     else endDate = moment(position.endDate).format('MMMM YYYY');
     return (
-      <div className={classNames('row','wrap-content','resume-position')} onClick={this.changeToPositionDetailed.bind(this)}>
+      <div className={classNames('row','wrap-content','resume-position')} onClick={this.changeToPositionDetailed.bind(this,position.id)}>
         <div className={classNames('column','wrap-content')}>
           <h4 className={classNames('position-title','cell')}>{position.title}</h4>
           <h3 className={classNames('position-company','cell')}>
@@ -69,13 +72,20 @@ class Resume extends Component{
             <small>{startDate} - {endDate}</small>
           </h3>
         </div>
-        <div className={classNames('arrow','position-arrow')}></div>
+        <div className={classNames('arrow','position-arrow','sm-hide')}></div>
       </div>
     );
   }
 
-  changeToPositionDetailed(){
-    browserHistory.push('/position');
+  changeToPositionDetailed(id){
+    let cardStyles = this.state.cardStyle;
+    cardStyles['totally-flip-card'] = true;
+    this.setState({
+      cardStyle : cardStyles
+    });
+    setTimeout(function () {
+      browserHistory.push('/position/'+id);
+    }, 501);
   }
 }
 

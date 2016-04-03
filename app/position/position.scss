@@ -1,0 +1,14 @@
+.position{
+  @extend .full-width;
+  @extend .center-content;
+
+  &-summary{
+    padding:1em;
+    font-style: italic;
+  }
+
+  &-timming{
+    padding: 1em 1em 0 1em;
+    font-weight: 500;
+  }
+}
