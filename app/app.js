@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-import Landing from './landing/Landing';
+import Routes from './routes';
 
 injectTapEventPlugin();
 
-ReactDOM.render(<Landing />,document.getElementById('my-page'));
+ReactDOM.render(Routes,document.getElementById('my-page'));

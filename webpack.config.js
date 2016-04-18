@@ -1,13 +1,18 @@
 var autoprefixer = require('autoprefixer'),
     webpack = require('webpack'),
     path = require('path'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin');
+    ExtractTextPlugin = require('extract-text-webpack-plugin'),
+    HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry:path.join(__dirname,'./app/index.js'),
+  entry:[
+    'webpack/hot/dev-server',
+    'webpack-dev-server/client?http://localhost:3000',
+    path.join(__dirname,'./app/index.js')
+  ],
   output:{
-    path:path.join(__dirname,'./dist/'),
-    filename:'bundle.js'
+    path:path.join(__dirname,'./'),
+    filename:'dist/bundle.js'
   },
   module:{
     loaders:[
@@ -29,6 +34,13 @@ module.exports = {
       {
         test:/\.scss$/,
         loader : ExtractTextPlugin.extract('style-loader','css-loader!postcss-loader!sass-loader')
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+            'file?hash=sha512&digest=hex&name=[hash].[ext]',
+            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        ]
       }
     ]
   },
@@ -36,9 +48,14 @@ module.exports = {
     return [autoprefixer];
   },
   plugins:[
-    new webpack.optimize.UglifyJsPlugin({minimize:true}),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.UglifyJsPlugin({minimize:false}),
     new webpack.optimize.DedupePlugin(),
-    new ExtractTextPlugin('bundle.css'),
-    new webpack.HotModuleReplacementPlugin()
+    new ExtractTextPlugin('dist/bundle.css'),
+    new HtmlWebpackPlugin({
+      title : '@bartsis',
+      path : '/',
+      template : './app/app.html'
+    })
   ]
 }

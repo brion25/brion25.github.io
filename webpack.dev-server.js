@@ -8,6 +8,7 @@ var compiler = webpack(config);
 var server = new WebpackDevServer(compiler,{
   contentBase:path.join(__dirname,'./'),
   noInfo:false,
+  hot:true,
   stats:{
     colors:true
   }

@@ -1,9 +1,0 @@
-.github{
-  @extend .center-content;
-  @extend .full-width;
-
-  &-contributions{
-    background-color: $blue;
-    width:100%;
-  }
-}

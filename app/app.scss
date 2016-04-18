@@ -1,23 +1,30 @@
-@import "app/common/styles/main";
-@import "app/loading/loading";
-@import "app/home/home";
-@import "app/resume/resume";
-@import "app/github/github";
-@import "app/position/position";
+@import "./variables";
+@import "./../node_modules/sass-flex-mixin/flex";
+@import "./../node_modules/flexboxgrid-sass/flexboxgrid.scss";
 
-html, body, #my-page{
-  height:100%;
-}
+@import "./home/home";
+@import "./myself/myself";
 
 body{
-  background-color: $blue;
-  font-family: sans-serif;
-  font-weight: lighter;
-  color: $blue;
-  margin : 0;
+  background-color: $green;
 }
 
-h1,h2,h3,h4,h5,h6{
-  margin : 0;
-  font-weight: bolder;
+#my-page{
+  width:inherit;
+}
+
+.full-width{
+  width:100%;
+}
+
+.loading-bar{
+  transition: height $animationTimming;
+}
+
+.min-height{
+  height:0.25em;
+}
+
+.no-height{
+  height : 0em;
 }

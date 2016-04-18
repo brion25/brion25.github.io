@@ -1,0 +1,10 @@
+.home{
+  width: inherit;
+
+  .app-bar{
+    background-color: $blue;
+    svg{
+      fill:white !important;
+    }
+  }
+}
