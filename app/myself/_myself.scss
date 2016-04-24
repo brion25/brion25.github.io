@@ -1,3 +1,15 @@
 .myself{
   padding:0.5em;
+  .my-card{
+    animation: card-enter;
+    animation-duration: 0.5s;
+    &:not(:first-child){
+      margin-top: 0.5em;
+    }
+  }
+  @media(max-width:640){
+    .position-card{
+      width:100%;
+    }
+  }
 }

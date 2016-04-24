@@ -28,6 +28,24 @@ class Home extends Component{
     });
   }
 
+  renderLines(str){
+    if(str){
+      return(
+        <div>
+          {str.split('\n').map(line => {
+            return (
+              <p>
+                {line}
+              </p>
+            );
+          })}
+        </div>
+      );
+    }else{
+      return '';
+    }
+  }
+
   render(){
     return (
       <div className={classnames('home')}>
@@ -60,7 +78,7 @@ class Home extends Component{
                   </IconMenu>
                 }
               />
-              {React.cloneElement(this.props.children, {toogleLoader : this.toogleLoader.bind(this)})}
+              {React.cloneElement(this.props.children, {toogleLoader : this.toogleLoader.bind(this), renderLines : this.renderLines.bind(this)})}
             </div>
           </div>
         </div>
