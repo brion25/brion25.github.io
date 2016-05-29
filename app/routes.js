@@ -1,14 +1,14 @@
 import React from 'react';
-import { Router, Route, hashHistory, IndexRoute } from 'react-router';
+import { Router, Route, IndexRoute, useRouterHistory } from 'react-router';
+import { createHashHistory } from 'history'
 
-import Home from './home/Home.js';
-import Myself from './myself/Myself.js';
+import AppWrapper from './common/components/AppWrapper.js';
+
+const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
 
 export default (
-  <Router history={hashHistory}>
-    <Route path="/" component={Home}>
-      <IndexRoute component={Myself} />
-      <Route path="myself" component={Myself} />
+  <Router history={appHistory}>
+    <Route path="/" component={AppWrapper}>
     </Route>
   </Router>
-)
+);

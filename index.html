@@ -3,26 +3,9 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@bartsis</title>
-  <link href="dist/bundle.css" rel="stylesheet"></head>
+  <link href="dist/main.css" rel="stylesheet"></head>
   <body>
     <div id="my-page" class="container center-content">
     </div>
-    <script type="text/javascript" src="http://platform.linkedin.com/in.js">
-      api_key: 78khio5vckiotr
-      authorize: true
-      onLoad: storeDataFromLinkedIN
-    </script>
-    <script type="text/javascript">
-      if(window.localStorage) window.localStorage.setItem('linkedinProfile','');
-      function storeDataFromLinkedIN(){
-        IN.API.Profile("me")
-          .fields(["firstName", "lastName","maidenName","formattedName","location","positions","picture-urls::(original)", "headline", "summary","email-address","public-profile-url"])
-          .result(function(result) {
-            if(window.localStorage){
-              window.localStorage.setItem('linkedinProfile',JSON.stringify(result.values[0]));
-            }
-          });
-      }
-    </script>
-  <script src="dist/bundle.js"></script></body>
+  <script type="text/javascript" src="dist/main.js"></script></body>
 </html>

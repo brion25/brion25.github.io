@@ -1,31 +1,9 @@
-@import "./variables";
+@import "./common/styles/variables";
+@import "./common/styles/menu";
+@import "./common/styles/general";
 @import "./../node_modules/sass-flex-mixin/flex";
 @import "./../node_modules/flexboxgrid-sass/flexboxgrid.scss";
 
-@import "./common/styles/animations";
-@import "./home/home";
-@import "./myself/myself";
-
-body{
-  background-color: $green;
-}
-
 #my-page{
   width:inherit;
-}
-
-.full-width{
-  width:100%;
-}
-
-.loading-bar{
-  transition: height $animationTimming;
-}
-
-.min-height{
-  height:0.25em;
-}
-
-.no-height{
-  height : 0em;
 }
