@@ -1,22 +1,10 @@
-import angular from "angular";
-import Router from "angular-route";
-import ngMaterial from "angular-material";
-import FactoryProfile from "./common/factory-profile";
-import FactoryBackground from "./common/factory-background.js";
-import Config from "./config.js";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import 'twitter-fetcher';
 
-import "./style-app.js";
+import Routes from './routes';
 
-const {module: ng} = angular;
+injectTapEventPlugin();
 
-ng("myPage",[Router, 'ngMaterial'])
-  .factory('FactoryBackground',["$q","$http",FactoryBackground])
-  .factory('FactoryProfile',["$q","$http",FactoryProfile])
-  .config(['$routeProvider',Config])
-  .run(['FactoryBackground','$rootScope',(FactoryBackground, rootScope) => {
-    FactoryBackground.then((backgroundUrl) => {
-      rootScope.backgroundUrl = backgroundUrl;
-    },(error) => {
-      console.log("Error!!!");
-    })
-  }]);
+ReactDOM.render(Routes,document.getElementById('my-page'));

@@ -1,0 +1,82 @@
+.menu-icon{
+  box-shadow: 0 0 $menuBoxShadowBlur black;
+  display: inline-block;
+  min-width: $menuSize;
+  min-height: $menuSize;
+  z-index: 9999;
+  position: fixed;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  padding:0.5em;
+  top: 1em;
+  left: 1em;
+  &.open{
+    align-content: center;
+  }
+  .bar{
+    &:first-child{
+      margin-top:0.4em;
+    }
+    position: relative;
+    transition: all $animationTimming $animationType;
+    width: 100%;
+    height: 0.3em;
+    display: block;
+    background-color: white;
+    border-radius: 1em;
+    margin:0.15em 0;
+    &.rotate-left{
+      position: absolute;
+      transform: rotate(45deg);
+      margin-top: .9em;
+      max-width: 75%;
+      left:0.3em;
+    }
+    &.disappear{
+      height: 0;
+    }
+    &.rotate-right{
+      position: absolute;
+      transform: rotate(-45deg);
+      margin-top: .7em;
+      max-width: 75%;
+      left:0.3em;
+    }
+  }
+}
+
+.menu-opts{
+  color:white;
+  z-index: 9999;
+  box-shadow: $menuBoxShadowLeft $menuBoxShadowTop $menuBoxShadowBlur $menuBoxShadowColor;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-content: space-around;
+  justify-content: center;
+  transition: all $animationTimming $animationType;
+  transform: translateY(calc(100% - #{$menuBoxShadowTop}));
+  background-color: rgba(0,0,0,0.15);
+  &.open{
+    transform: translateY(0%);
+  }
+  .opt{
+    color: white;
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    .icon{
+      i{
+        font-size: 4em;
+      }
+    }
+    h3{
+      margin: 0.25em 0;
+      text-decoration: none;
+    }
+  }
+}

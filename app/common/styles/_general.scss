@@ -1,0 +1,26 @@
+.hide{
+  display: none !important;
+}
+
+.blur-me{
+  filter : blur(15px);
+}
+
+.full-size{
+  transition: all $animationTimming $animationType;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.content{
+  padding:2.5em;
+}
+
+body{
+  font-family: Helvetica, Roboto, Andale Mono, monospace;
+  background-color: #222;
+  color : $gray;
+}
