@@ -1,8 +1,8 @@
 @import "./common/styles/variables";
+@import "./common/styles/loader";
 @import "./common/styles/menu";
 @import "./common/styles/general";
-@import "./../node_modules/sass-flex-mixin/flex";
-@import "./../node_modules/flexboxgrid-sass/flexboxgrid.scss";
+@import "./twitter/twitter";
 
 #my-page{
   width:inherit;

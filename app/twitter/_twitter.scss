@@ -1,0 +1,94 @@
+.tweets{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  max-height: 60em;
+  .tweet-wrapper{
+    @media(max-width: 640px){
+      max-width: calc(100% - 3px);
+      margin : 0.25em;
+    }
+    max-width: calc(23% - 3px);
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25em;
+    overflow: hidden;
+    background-color:white;
+    border: $tweetBorder;
+    .user{
+      order:2;
+      padding : 0 $tweetMargin;
+      a[data-scribe="element:user_link"]{
+        position: relative;
+        width:100%;
+        height:5em;
+        display: block;
+        span{
+          position: absolute;
+          display: block;
+        }
+        span:first-child{
+          width:3em;
+          top:1em;
+          left:1em;
+          img{
+            width:100%;
+            border-radius: 50%;
+          }
+        }
+        span:nth-child(2){
+          transform: translateY(-100%);
+          color:black;
+          font-weight: bold;
+        }
+        span:not(:first-child){
+          width : calc(100% - 6em);
+          top:50%;
+          left:5em;
+        }
+        span:last-child{
+          color:#697882;
+          font-size: $tweetSmall;
+          left:6.75em;
+        }
+      }
+    }
+    .tweet{
+      order:3;
+      padding:0 $tweetMargin;
+      color:black;
+      margin : 0;
+      img[aria-label*='Emoji']{
+        width:1em;
+      }
+    }
+    .timePosted{
+      order : 4;
+      padding:0 $tweetMargin;
+      color:black;
+      margin : $tweetMargin/3 0 $tweetMargin 0;
+      font-size: $tweetSmall;
+      a{
+        text-decoration: none;
+      }
+    }
+    .media{
+      order:1;
+      max-height: 15em;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      border-bottom: $tweetBorder;
+      img[src*='undefined']{
+        display: none;
+      }
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

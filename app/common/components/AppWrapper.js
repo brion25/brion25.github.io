@@ -2,17 +2,14 @@ import React, {
   Component
 } from 'react';
 import classnames from 'classnames';
+import { Link } from 'react-router';
 
 const MENU_OPTS = [
   {
-    label : 'Profile',
-    icon : 'fa-user',
-    tooltip : 'See my Profile'
-  },
-  {
-    label : 'Github',
-    icon : 'fa-github',
-    tooltip : 'See my Profile'
+    label : 'Twitter',
+    icon : 'fa-twitter',
+    tooltip : 'See my Profile',
+    link : 'twitter'
   }
 ];
 
@@ -20,7 +17,8 @@ class AppWrapper extends Component{
   constructor(props){
     super(props);
     this.state = {
-      menuOpen : false
+      menuOpen : false,
+      loading : true
     }
   }
 
@@ -28,6 +26,15 @@ class AppWrapper extends Component{
     this.setState({
       menuOpen : !this.state.menuOpen
     });
+  }
+
+  toogleLoading(){
+    let self = this;
+    setTimeout(function () {
+      self.setState({
+        loading : !self.state.loading
+      });
+    }, 250);
   }
 
   render(){
@@ -41,16 +48,28 @@ class AppWrapper extends Component{
         <div className={classnames('menu-opts', { open : this.state.menuOpen })}>
           {MENU_OPTS.map((opt, index) => {
             return (
-              <div key={`opt-${index}`} className={classnames('opt')}>
-                <div className={classnames('icon')}>
-                  <i className={classnames('fa', opt.icon)} ariaHidden={true}></i>
+              <Link to={opt.link} onClick={this.toogleMenu.bind(this)}>
+                <div key={`opt-${index}`} className={classnames('opt')}>
+                  <div className={classnames('icon')}>
+                    <i className={classnames('fa', opt.icon)} ariaHidden={true}></i>
+                  </div>
+                  <h3>{opt.label}</h3>
                 </div>
-                <h3>{opt.label}</h3>
-              </div>
+              </Link>
             );
           })}
         </div>
-        <section className={classnames('full-size',{'blur-me' : this.state.menuOpen})}></section>
+        <div className={classnames('loader', {hide : !this.state.loading})}>
+          <span className={classnames('square')}></span>
+          <span className={classnames('square')}></span>
+          <span className={classnames('square')}></span>
+          <span className={classnames('square')}></span>
+        </div>
+        <section className={classnames('full-size',{'blur-me' : this.state.menuOpen || this.state.loading})}>
+          {React.cloneElement(this.props.children, {
+            toogleLoading : this.toogleLoading.bind(this)
+          })}
+        </section>
       </section>
     );
   }
