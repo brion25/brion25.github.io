@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import 'twitter-fetcher';
-
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import myApp from './common/reducers';
 import Routes from './routes';
 
 injectTapEventPlugin();
 
-ReactDOM.render(Routes,document.getElementById('my-page'));
+let store = createStore(myApp);
+
+function MyAppRoot(props){
+  return (
+    <Provider store={store}>
+      <Routes />
+    </Provider>
+  );
+}
+
+render(<MyAppRoot />,document.getElementById('my-page'));

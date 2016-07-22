@@ -26,6 +26,11 @@ var config = {
           'babel-loader?presets[]=es2015,presets[]=stage-0,presets[]=react',
           'imports?config=>{size:50}'
         ]
+      },{
+        test : /\.json$/,
+        loaders : [
+          'json'
+        ]
       },
       {
         test:/\.scss$/,
@@ -66,7 +71,6 @@ if(process.env.ENV === 'development'){
     'webpack/hot/dev-server',
     'webpack-dev-server/client?http://localhost:3000'
   );
-  config.plugins.push(new webpack.optimize.UglifyJsPlugin({minimize:false}));
 }
 else if(process.env.ENV === 'production'){
   config.plugins.push(new webpack.optimize.UglifyJsPlugin({minimize:true}));
