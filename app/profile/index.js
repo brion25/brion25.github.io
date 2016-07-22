@@ -1,9 +1,14 @@
+import { connect } from 'react-redux';
+
 export default Profile;
 
 function Profile(React){
-  return (props) => {
+  const ProfileCmp =  (props) => {
+    let profile = props.profile.rawProfile;
     return (
-      <div>{props.name}</div>
+      <div>{profile.name}</div>
     );
   }
+
+  return connect()(ProfileCmp);
 }

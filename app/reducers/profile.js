@@ -1,8 +1,8 @@
-import rawProfile from './../profiles/profile.json';
+import rawProfile from './../common/profiles/profile.json';
 import * as types from './../actions/ActionTypes';
 
 const initialState = {
-  profile : rawProfile
+  rawProfile
 };
 
 function profile(state = initialState, action){
