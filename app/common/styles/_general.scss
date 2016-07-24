@@ -1,9 +1,22 @@
 body{
   background-color: $backgroundColor;
+  margin:0;
 }
 
 .col{
   &-md-6{
     width : 50%;
   }
+}
+
+div[class^="col"]{
+  padding : 0;
+}
+
+.row{
+  margin : 0;
+}
+
+.app{
+  margin-left: 3em;
 }

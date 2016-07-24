@@ -6,9 +6,21 @@
   left: 0;
   min-width: 3em;
   text-align: center;
-  border:1px solid $backgroundBorderColor;
+  border-right:1px solid $backgroundColor2;
   a{
     text-decoration: none;
+  }
+
+  .logo{
+    height: calc(2.5em - 1px);
+    border-bottom:1px solid $backgroundColor2;
+  }
+
+  .contact-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100% - 2.5em);
   }
 
   .contact-item{

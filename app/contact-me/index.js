@@ -1,5 +1,3 @@
-import { Link } from 'react-router';
-
 function ContactMe(React){
   const Wrapper = (props) => {
     console.log(props);
@@ -8,7 +6,11 @@ function ContactMe(React){
 
     return (
       <div className="contact-me">
-        {Object.keys(profile.contact).map(_renderContact.bind(self,profile.contact))}
+        <div className="logo">
+        </div>
+        <div className="contact-items">
+          {Object.keys(profile.contact).map(_renderContact.bind(self,profile.contact))}
+        </div>
       </div>
     );
   }
@@ -28,7 +30,7 @@ function ContactMe(React){
         return (
           <a href={_contacts[contact]} target="_blank">
             <div key={"contact-"+i} className="contact-item">
-              <i className="fa fa-code" aria-hidden="true"></i>
+              <i className="fa fa-github-alt" aria-hidden="true"></i>
             </div>
           </a>
         );
