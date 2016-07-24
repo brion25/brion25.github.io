@@ -1,0 +1,9 @@
+body{
+  background-color: $backgroundColor;
+}
+
+.col{
+  &-md-6{
+    width : 50%;
+  }
+}
