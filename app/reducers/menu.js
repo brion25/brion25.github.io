@@ -9,11 +9,9 @@ function menu(state = initialState, action){
     case types.ENABLE_SEARCH_MODE:
       state.searchMode = true;
       return Object.assign({},state);
-      break;
     case types.DISABLE_SEARCH_MODE:
       state.searchMode = false;
       return Object.assign({},state);
-      break;
     default:
       return state;
   }
