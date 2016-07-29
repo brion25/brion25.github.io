@@ -15,7 +15,7 @@ var config = {
   ],
   output : {
     path : outputPath,
-    filename : 'dist/[name].js'
+    filename : '[name].js'
   },
   module : {
     loaders : [
@@ -26,6 +26,11 @@ var config = {
           'babel-loader?presets[]=es2015,presets[]=stage-0,presets[]=react',
           'imports?config=>{size:50}'
         ]
+      },{
+        test : /\.json$/,
+        loaders : [
+          'json'
+        ]
       },
       {
         test:/\.scss$/,
@@ -34,8 +39,8 @@ var config = {
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
-            'file?hash=sha512&digest=hex&name=img/[hash].[ext]',
-            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+            'file?hash=sha512&name=img/[hash].[ext]',
+            'image-webpack?optimizationLevel=7'
         ]
       },
       { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
@@ -52,7 +57,7 @@ var config = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.DedupePlugin(),
-    new ExtractTextPlugin('dist/[name].css'),
+    new ExtractTextPlugin('[name].css'),
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV : JSON.stringify(process.env.ENV)
@@ -66,7 +71,6 @@ if(process.env.ENV === 'development'){
     'webpack/hot/dev-server',
     'webpack-dev-server/client?http://localhost:3000'
   );
-  config.plugins.push(new webpack.optimize.UglifyJsPlugin({minimize:false}));
 }
 else if(process.env.ENV === 'production'){
   config.plugins.push(new webpack.optimize.UglifyJsPlugin({minimize:true}));

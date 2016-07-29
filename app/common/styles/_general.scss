@@ -1,43 +1,46 @@
-.hide{
-  display: none !important;
-}
-
-.blur-me{
-  @media(min-width: 640px){
-    filter : blur(15px);
-  }
-  @media(max-width: 640px){
-    filter : brightness(25%);
-  }
-}
-
-.full-size{
-  transition: all $animationTimming $animationType;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  max-height: 60em;
+body{
+  background-color: $backgroundColor;
+  margin:0;
+  font-family: sans-serif;
 }
 
 .content{
-  height: 100%;
-}
-
-body{
-  font-family: Helvetica, Roboto, Andale Mono, monospace;
-  background-color: #222;
-  color : $gray;
-  height:100%;
-  width:100%;
-}
-
-#my-page{
-  height:100%;
-  width:100%;
-  section{
-    height:100%;
-    width:100%;
+  @media only screen and (min-width: 62em){
+    padding:0;
   }
+  padding:0 0.5em !important;
+  *{
+    @media only screen and (min-width: 62em){
+      font-size: 1em;
+    }
+    font-size : 0.85em;
+    font-weight: lighter;
+    color : $fontColor;
+  }
+}
+
+.heading-big{
+  @media only screen and (min-width: 62em){
+    font-size: 2.5em;
+  }
+  font-size:1.5em;
+  text-align: center;
+}
+
+.col{
+  &-md-6{
+    width : 50%;
+  }
+}
+
+div[class^="col"]{
+  padding : 0;
+}
+
+.row{
+  margin : 0;
+}
+
+.app{
+  margin-left: 3em;
 }

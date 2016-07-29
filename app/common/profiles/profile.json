@@ -1,0 +1,26 @@
+{
+  "name" : "Jose Carlos Ixcoatl Gomez Briones",
+  "position" : "JavaScript Ninja",
+  "contact" : {
+    "twitter" : "https://twitter.com/bartsis",
+    "linkedin" : "https://mx.linkedin.com/in/brion25",
+    "email" : "car_25_ixco@hotmail.com",
+    "github" : "https://github.com/brion25",
+    "npm" : "https://www.npmjs.com/~brion25"
+  },
+  "summary" : "I am a Front End Web Developer with more than 3 years of experience on the field. I'm part of a multicultural team following the Agile methodologies. My goal is to plan, build, test, deploy and maintain web applications for desktop and mobile devices.\nI'm that kind of person who tries to follow the best practices to ensure the best software possible; who usually writes on his personal blog about new Frameworks/Libraries or existing ones, who is always creating new stuff on his plunker, fiddler or jsbin. I'm also autodidact, responsible and charismatic.",
+  "skills" : {
+    "Java" : 80,
+    "JavaScript" : 100,
+    "CSS" : 100,
+    "HTML" : 100,
+    "NodeJS" : 100,
+    "Salesforce" : 70,
+    "Unit Testing" : 90,
+    "Angular 1" : 100,
+    "React" : 90,
+    "React Native" : 70,
+    "NativeScript" : 60,
+    "Ionic" : 80
+  }
+}

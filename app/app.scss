@@ -1,5 +1,12 @@
 @import "./common/styles/variables";
-@import "./common/styles/loader";
-@import "./common/styles/menu";
+@import "./common/styles/vendors";
 @import "./common/styles/general";
-@import "./twitter/twitter";
+
+//Contact Me
+@import "./contact-me/style";
+
+//Profile
+@import "./profile/style";
+
+//Menu
+@import "./menu/style";
