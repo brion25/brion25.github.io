@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import contactMe from './../../containers/ContactMe';
-import menu from './../../menu';
+import menu from './../../containers/Menu';
 
 function App(React){
   const ContactMe = contactMe(React);
@@ -13,7 +13,7 @@ function App(React){
         <div className="app">
           <Menu />
           <div className="row">
-            <div className="col-md-6 col-md-offset-3">
+            <div className="col-xs-12 col-md-10 col-md-offset-1 content">
               {props.children}
             </div>
           </div>

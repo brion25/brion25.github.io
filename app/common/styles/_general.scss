@@ -1,6 +1,30 @@
 body{
   background-color: $backgroundColor;
   margin:0;
+  font-family: sans-serif;
+}
+
+.content{
+  @media only screen and (min-width: 62em){
+    padding:0;
+  }
+  padding:0 0.5em !important;
+  *{
+    @media only screen and (min-width: 62em){
+      font-size: 1em;
+    }
+    font-size : 0.85em;
+    font-weight: lighter;
+    color : $fontColor;
+  }
+}
+
+.heading-big{
+  @media only screen and (min-width: 62em){
+    font-size: 2.5em;
+  }
+  font-size:1.5em;
+  text-align: center;
 }
 
 .col{

@@ -8,6 +8,11 @@ import Routes from './routes';
 
 injectTapEventPlugin();
 
+String.prototype.toParagraphs = function(){
+  let str = this.replace(/\n/g,'<br /> </br>'); 
+  return str;
+}
+
 let store = createStore(myApp);
 
 function MyAppRoot(props){

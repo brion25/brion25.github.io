@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import profile from './profile';
+import menu from './menu';
 
 const rootReducer = combineReducers({
-  profile
+  profile,
+  menu
 });
 
 export default rootReducer;

@@ -20,24 +20,24 @@ function ContactMe(React){
     switch(contact){
       case 'email':
         return (
-          <a href={"mailto://" + _contacts[contact]}>
-            <div key={"contact-"+i} className="contact-item">
+          <a key={"contact-"+i} href={"mailto://" + _contacts[contact]}>
+            <div className="contact-item">
               <i className="fa fa-envelope-o" aria-hidden="true"></i>
             </div>
           </a>
         );
       case 'npm':
         return (
-          <a href={_contacts[contact]} target="_blank">
-            <div key={"contact-"+i} className="contact-item">
+          <a key={"contact-"+i} href={_contacts[contact]} target="_blank">
+            <div className="contact-item">
               <i className="fa fa-github-alt" aria-hidden="true"></i>
             </div>
           </a>
         );
       default:
         return (
-          <a href={_contacts[contact]} target="_blank">
-            <div key={"contact-"+i} className={"contact-item contact-item-" + contact}>
+          <a key={"contact-"+i} href={_contacts[contact]} target="_blank">
+            <div className={"contact-item contact-item-" + contact}>
               <i className={"fa fa-" + contact} aria-hidden="true"></i>
             </div>
           </a>
