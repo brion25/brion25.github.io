@@ -1,0 +1,22 @@
+[
+  {
+    "id" : "profile",
+    "label" : "My Profile",
+    "fa" : "fa-user",
+    "tooltip" : "See my profile",
+    "link" : {
+      "type" : "inner",
+      "url" : "/profile"
+    }
+  },
+  {
+    "id" : "blog",
+    "label" : "My Blog",
+    "fa" : "fa-rss",
+    "tooltip" : "See my blog",
+    "link" : {
+      "type" : "outer",
+      "url" : "http://brion25.blogspot.mx"
+    }
+  }
+]

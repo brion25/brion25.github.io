@@ -2,8 +2,85 @@
   height:0;
   transition: all $animationType;
   overflow: hidden;
-  background-color: $backgroundColor2;
+  background-color: $menuColor;
   border-bottom: none;
+
+  &-options{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height : $menuHeight;
+    perspective: 2000px;
+  }
+
+  &-option{
+    @media only screen and (min-width: 62em){
+      width : 30%;
+    }
+    height : $menuOptionHeight - 20px;
+    width : calc(50% - 2em);
+    position: relative;
+    margin : 0.5em;
+
+    a{
+      text-decoration: none;
+    }
+
+    &:hover{
+      .menu-option-content{
+        transform: rotateX(50deg);
+      }
+
+      .menu-option-tooltip{
+        max-height: 50px;
+        color: white;
+        padding:2.5px 0;
+      }
+    }
+
+    &-tooltip{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      color:$menuTooltipColor;
+      background: $menuTooltipColor;
+      padding : 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height $animationType, color $animationType, padding $animationType;
+    }
+
+     &-content{
+       background: $menuOptionColor;
+       color:white;
+       display: flex;
+       flex-direction: column;
+       padding:5px;
+       transition: transform $animationType;
+       z-index: 6;
+
+       .icon{
+         flex : 2;
+         font-size: 5em;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+       }
+
+       .label{
+         flex:1;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+
+         h3{
+           margin : 0;
+           font-weight: lighter;
+         }
+       }
+     }
+  }
 
   &.active{
     height : $menuHeight;

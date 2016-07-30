@@ -1,17 +1,17 @@
 import { Link } from 'react-router';
 import contactMe from './../../containers/ContactMe';
-import menu from './../../containers/Menu';
+import navbar from './../../containers/Navbar';
 
 function App(React){
   const ContactMe = contactMe(React);
-  const Menu = menu(React);
+  const Navbar = navbar(React);
 
   const Wrapper = (props) => {
     return (
       <section>
         <ContactMe />
         <div className="app">
-          <Menu />
+          <Navbar />
           <div className="row">
             <div className="col-xs-12 col-md-10 col-md-offset-1 content">
               {props.children}
