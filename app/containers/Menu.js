@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
-import Menu from './../menu';
+import Navbar from './../navbar';
 
-const mapStateMenu = (state) => {
+const mapStateNavbar = (state) => {
   return {
-    menu : state.menu
+    navbar : state.navbar
   }
 }
 
-function MenuContainer(React){
+function NavbarContainer(React){
   return connect(
-    mapStateMenu
-  )(Menu(React));
+    mapStateNavbar
+  )(Navbar(React));
 }
 
-export default MenuContainer;
+export default NavbarContainer;

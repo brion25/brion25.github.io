@@ -1,0 +1,12 @@
+.menu{
+  height:0;
+  transition: all $animationType;
+  overflow: hidden;
+  background-color: $backgroundColor2;
+  border-bottom: none;
+
+  &.active{
+    height : $menuHeight;
+    border-bottom:1px solid $backgroundColor2;
+  }
+}
