@@ -69,7 +69,6 @@
       font-size: 2.5em;
       align-items: flex-start;
       justify-content: flex-start;
-      background: $defaultLightGreen;
 
       .search-mode-content{
         display: initial;
@@ -96,6 +95,10 @@
       }
     }
 
+    .wrapper{
+      width:100%;
+    }
+
     .search-icon{
       font-size: 1em;
       margin-right: 0.5em;
@@ -115,6 +118,10 @@
     position: relative;
     width: 2em;
     height: 2em;
+
+    &.search-mode-active{
+      display: none;
+    }
 
     .menu-icon{
       &-open, &-close{
