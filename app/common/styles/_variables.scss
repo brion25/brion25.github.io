@@ -1,5 +1,6 @@
 $backgroundColor : rgba(230, 243, 211, 0.5);
-$backgroundColorNoOpacity : #edf6de;
+$backgroundColorNoOpacity : #f2f9e9;
+$backgroundColorStrongNoOpacity : rgb(236, 246, 222);
 $backgroundBorderColor : rgba(230, 243, 211, 1);
 $backgroundColor2 : rgba(193, 208, 170, 0.5);
 
@@ -18,3 +19,6 @@ $menuOptionHeight : $menuHeight/3;
 $menuOptionColor : #075379;
 $menuColor : #76cbff;
 $menuTooltipColor : #021620;
+
+$animationLeaveTopStart : 0;
+$animationLeaveTopEnd : 800px;

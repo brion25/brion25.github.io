@@ -14,7 +14,7 @@ function Navbar(React){
     return (
       <div className="navbar">
         <div className={classnames("menu", {active : props.navbar.menuOpen})}>
-          <Menu />
+          <Menu {...props} />
         </div>
         <div className="row end-md end-xs navbar-actions">
           <div className="col-md-6 actions-wrapper col-xs-12">

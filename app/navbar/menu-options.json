@@ -15,8 +15,8 @@
     "fa" : "fa-rss",
     "tooltip" : "See my blog",
     "link" : {
-      "type" : "outer",
-      "url" : "http://brion25.blogspot.mx"
+      "type" : "inner",
+      "url" : "/blog"
     }
   }
 ]

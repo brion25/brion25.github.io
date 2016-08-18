@@ -3,9 +3,12 @@ body{
   margin:0;
   font-family: sans-serif;
   font-weight: lighter;
+  perspective: 200em;
 }
 
 .content{
+  position: relative;
+
   @media only screen and (min-width: 62em){
     padding:0;
   }

@@ -1,0 +1,25 @@
+.page-transition{
+  &-enter, &-leave{
+    transition: all $animationType;
+    background-color: $backgroundColorNoOpacity;
+  }
+
+  &-enter{
+    transform:scale(0.5);
+  }
+
+  &-enter-active{
+    transform: scale(1);
+  }
+
+  &-leave{
+    z-index:9999;
+    box-shadow: -5px 5px 5px $backgroundColorStrongNoOpacity;
+    top:0;
+    position: absolute;
+  }
+
+  &-leave-active{
+    transform: translateX(100%);
+  }
+}

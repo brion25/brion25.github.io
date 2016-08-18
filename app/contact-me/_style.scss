@@ -1,12 +1,14 @@
 .contact-me{
   position: fixed;
   height: 100%;
-  background: $backgroundColor;
+  background: $backgroundColorStrongNoOpacity;
   top: 0;
   left: 0;
   min-width: 3em;
   text-align: center;
   border-right:1px solid $backgroundColor2;
+  z-index:9999;
+
   a{
     text-decoration: none;
   }
