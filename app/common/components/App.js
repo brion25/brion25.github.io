@@ -16,7 +16,7 @@ function App(React){
         <div className="app">
           <Navbar />
           <div className="row">
-            <div className="col-xs-12 col-md-10 col-md-offset-1 content">
+            <div className="col-xs-12 col-md-12 content">
               <ReactCSSTransitionGroup
                 component="div"
                 transitionName="page-transition"

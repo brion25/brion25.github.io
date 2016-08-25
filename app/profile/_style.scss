@@ -1,4 +1,38 @@
 .profile{
+  .avatar{
+    &-wrapper{
+      text-align: center;
+      margin: 0.75em 0;
+      &:hover + .avatar-wrapper-tooltip{
+        border-width: 1px;
+        padding : 0.5em;
+        max-height: 1em;
+      }
+      &-tooltip{
+        text-align: center;
+        min-width: 50%;
+        display: inline-block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0em;
+        border: 0px solid #bfe08f;
+        background-color: #ecf6de;
+        border-radius: 3px;
+        overflow: hidden;
+        max-height: 0em;
+        transition: all $animationType;
+      }
+    }
+
+    isolation : isolate;
+    width:8em;
+  }
+
+  .heading-big{
+    margin-top: 0;
+  }
+
   &-summary{
     text-align: center;
     font-style: italic;

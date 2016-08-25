@@ -1,4 +1,5 @@
 import * as types from './ActionTypes';
+import _getPosts from './get-posts';
 
 export function getProfile(){
   return {
@@ -29,3 +30,5 @@ export function closeMenu(){
     type : types.CLOSE_MENU
   }
 }
+
+export let getPosts = _getPosts;
