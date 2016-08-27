@@ -11,9 +11,9 @@
   },
   {
     "id" : "blog",
-    "label" : "My Blog",
+    "label" : "Just 4 Learn",
     "fa" : "fa-rss",
-    "tooltip" : "See my blog",
+    "tooltip" : "See my blog on blogger",
     "link" : {
       "type" : "inner",
       "url" : "/blog"

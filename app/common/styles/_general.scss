@@ -11,7 +11,7 @@ html, body, #my-page{
     width:calc(100% - 3em);
 
     & > .row{
-      height: calc(100% - 3em);
+      height: calc(100% - 2.9em);
       width:100%;
       margin:none;
 
@@ -39,11 +39,11 @@ body{
 .content{
   position: relative;
   overflow: hidden;
+  padding: 0;
 
   @media only screen and (min-width: 62em){
     padding:0;
   }
-  padding:0 0.5em !important;
   *{
     @media only screen and (min-width: 62em){
       font-size: 1em;

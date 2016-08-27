@@ -2,6 +2,8 @@
   &-enter, &-leave{
     transition: all $animationType;
     background-color: $backgroundColorNoOpacity;
+    width: 100%;
+    height : 100%;
   }
 
   &-enter{
