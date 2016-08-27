@@ -1,15 +1,53 @@
+html, body, #my-page{
+  height:100%;
+  width:100%;
+}
+
+#my-page > section{
+  height: 100%;
+  width:100%;
+  .app{
+    height:100%;
+    width:calc(100% - 3em);
+
+    & > .row{
+      height: calc(100% - 2.9em);
+      width:100%;
+      margin:none;
+
+      & > div{
+        height: 100%;
+        width:100%;
+
+        & > div{
+          height : 100%;
+          width:100%;
+        }
+      }
+    }
+  }
+}
+
 body{
   background-color: $backgroundColor;
   margin:0;
   font-family: sans-serif;
   font-weight: lighter;
+  perspective: 200em;
 }
 
 .content{
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+
+  div{
+    overflow: auto;
+  }
+
   @media only screen and (min-width: 62em){
     padding:0;
   }
-  padding:0 0.5em !important;
   *{
     @media only screen and (min-width: 62em){
       font-size: 1em;

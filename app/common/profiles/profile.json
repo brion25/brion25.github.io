@@ -4,6 +4,7 @@
   "contact" : {
     "twitter" : "https://twitter.com/bartsis",
     "linkedin" : "https://mx.linkedin.com/in/brion25",
+    "codepen" : "http://codepen.io/bartsis/",
     "email" : "car_25_ixco@hotmail.com",
     "github" : "https://github.com/brion25",
     "npm" : "https://www.npmjs.com/~brion25"
@@ -21,6 +22,59 @@
     "Ionic" : 80,
     "Salesforce" : 70,
     "React Native" : 70,
-    "NativeScript" : 60
-  }
+    "NativeScript" : 60,
+    "Angular 2" : 60
+  },
+  "previousJobs" : [
+    {
+      "title" : "JavaScript Architect",
+      "company" : {
+        "name" : "CodeAsync"
+      },
+      "date" : {
+        "start" : "April 2016",
+        "end" : "Current"
+      }
+    },
+    {
+      "title" : "Full Stack Developer",
+      "company" : {
+        "name" : "Software Next Door"
+      },
+      "date" : {
+        "start" : "April 2016",
+        "end" : "Current"
+      }
+    },
+    {
+      "title" : "Senior Javascript Developer",
+      "company" : {
+        "name" : "Accenture"
+      },
+      "date" : {
+        "start" : "September 2015",
+        "end" : "April 2016"
+      }
+    },
+    {
+      "title" : "Web Developer",
+      "company" : {
+        "name" : "UST Global"
+      },
+      "date" : {
+        "start" : "January 2014",
+        "end" : "September 2015"
+      }
+    },
+    {
+      "title" : "Mobile Developer",
+      "company" : {
+        "name" : "Neyper"
+      },
+      "date" : {
+        "start" : "October 2013",
+        "end" : "October 2014"
+      }
+    }
+  ]
 }

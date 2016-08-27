@@ -60,7 +60,9 @@ var config = {
     new ExtractTextPlugin('[name].css'),
     new webpack.DefinePlugin({
       "process.env": {
-        NODE_ENV : JSON.stringify(process.env.ENV)
+        NODE_ENV : JSON.stringify(process.env.ENV),
+        GOOGLE_KEY : JSON.stringify(process.env.GOOGLE_KEY),
+        BLOGGER_ID : JSON.stringify(process.env.BLOGGER_ID)
       }
     })
   ]

@@ -1,5 +1,6 @@
 import {Link} from 'react-router';
 
+import * as types from './../actions';
 import menuOptions from './menu-options.json';
 
 function Menu (React){
@@ -14,7 +15,7 @@ function Menu (React){
       switch(option.link.type){
         case 'inner':
           return (
-            <div key={option.id} className="menu-option">
+            <div key={option.id} onClick={closeMenu} className="menu-option">
               <Link to={option.link.url}>
                 {_formatOption(option)}
               </Link>
@@ -22,7 +23,7 @@ function Menu (React){
           );
         case 'outer':
           return (
-            <div key={option.id} className="menu-option">
+            <div key={option.id} onClick={closeMenu} className="menu-option">
               <a href={option.link.url} target="_blank">
                 {_formatOption(option)}
               </a>
@@ -47,6 +48,10 @@ function Menu (React){
           </div>
         </div>
       );
+    }
+
+    function closeMenu(){
+      props.dispatch(types.closeMenu());
     }
   }
 

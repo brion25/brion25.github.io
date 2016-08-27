@@ -1,4 +1,6 @@
 import * as types from './ActionTypes';
+import _getPosts from './get-posts';
+import _getBlogProfile from './get-blogger-profile';
 
 export function getProfile(){
   return {
@@ -29,3 +31,7 @@ export function closeMenu(){
     type : types.CLOSE_MENU
   }
 }
+
+export let getBloggerPosts = _getPosts;
+
+export let getBloggerProfile = _getBlogProfile.bind(null,`https://www.googleapis.com/blogger/v2/blogs/${process.env.BLOGGER_ID}?key=${process.env.GOOGLE_KEY}`,null,types.GET_BLOGGER_PROFILE);

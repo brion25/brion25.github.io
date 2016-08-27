@@ -1,6 +1,7 @@
 @import "./common/styles/variables";
 @import "./common/styles/vendors";
 @import "./common/styles/general";
+@import "./common/styles/page-transition";
 
 //Contact Me
 @import "./contact-me/style";
@@ -10,3 +11,6 @@
 
 //Navbar
 @import "./navbar/style";
+
+//Blogger
+@import "./blogger/style";
