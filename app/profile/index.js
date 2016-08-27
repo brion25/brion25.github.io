@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import Chart from 'chart.js';
 
 import drawCharts from './draw-charts';
 import avatar from './avatar';
@@ -19,14 +18,33 @@ function Profile(React){
       <div className="profile">
         <h2 className="heading-big">{profile.name}</h2>
         <p className="profile-summary" dangerouslySetInnerHTML={{__html : profile.summary.toParagraphs()}}></p>
-        <div className="my-skills-md">
-          <canvas id={CANVAS_ID_MD}></canvas>
-        </div>
-        <div className="my-skills-xs">
-          <canvas id={CANVAS_ID_XS}></canvas>
+        <div className="my-qualifications">
+          <div className="my-previous-jobs">
+            <h2 className="my-previous-jobs-header">Previous Experience</h2>
+            <ul>
+              {profile.previousJobs.map(_renderPreviousJobs)}
+            </ul>
+          </div>
+          <div className="my-skills-md">
+            <canvas id={CANVAS_ID_MD}></canvas>
+          </div>
+          <div className="my-skills-xs">
+            <canvas id={CANVAS_ID_XS}></canvas>
+          </div>
         </div>
       </div>
     );
+  }
+
+  function _renderPreviousJobs(job){
+    return (
+      <li className="my-previous-jobs-job">
+        <div>
+          <h3>{job.title} <small> at {job.company.name}</small></h3>
+          <small>{job.date.start} - {job.date.end}</small>
+        </div>
+      </li>
+    )
   }
 
   return connect()(ProfileCmp);

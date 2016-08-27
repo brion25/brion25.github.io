@@ -20,7 +20,7 @@ function Blog(React){
               <small className="blog-info-date">{props.blogger.profile.published}</small>
             </div>
             <p className="blog-info-summary">{props.blogger.profile.description}</p>
-            <div>
+            <div  className="blog-info-posts-count">
               <span> I wrote </span>
               <b>{props.blogger.profile.posts ? props.blogger.profile.posts.totalItems : 0} </b>
               <span> posts</span>
@@ -49,7 +49,7 @@ function Blog(React){
 
   function _renderPosts(post, i){
     return (
-      <a href={post.url} key={'post-' + post.type + '-' + i}>
+      <a target="_blank" href={post.url} key={'post-' + post.type + '-' + i}>
         <div className="post">
           <div className="post-image">
             <img src={assetStrategy[post.labels[0].toLowerCase()]} />

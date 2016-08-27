@@ -1,3 +1,5 @@
+import Chart from 'chart.js';
+
 export default function drawCharts(skills, CANVAS_ID_MD, CANVAS_ID_XS){
   let chartValues = Object.keys(skills).map(skill => skills[skill]),
       chartDataRadial = {
@@ -34,6 +36,8 @@ export default function drawCharts(skills, CANVAS_ID_MD, CANVAS_ID_XS){
       type : 'radar',
       data : chartDataRadial,
       options : {
+        responsive: true,
+        maintainAspectRatio: false,
           scale: {
               ticks: {
                   beginAtZero: true
