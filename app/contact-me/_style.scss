@@ -1,12 +1,12 @@
 .contact-me{
   position: fixed;
   height: 100%;
-  background: $backgroundColorStrongNoOpacity;
+  background: $colorThird;
   top: 0;
   left: 0;
   min-width: 3em;
   text-align: center;
-  border-right:1px solid $backgroundColor2;
+  border-right:1px solid $colorFourth;
   z-index:9999;
 
   a{
@@ -15,7 +15,7 @@
 
   .logo{
     height: calc(2.5em - 1px);
-    border-bottom:1px solid $backgroundColor2;
+    border-bottom:1px solid $colorFourth;
   }
 
   .contact-items{
@@ -26,7 +26,7 @@
   }
 
   .contact-item{
-    background: $defaultGreen;
+    background: $colorFifth;
     border-radius: 50%;
     width: 2em;
     height: 2em;
