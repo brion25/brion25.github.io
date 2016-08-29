@@ -1,5 +1,7 @@
 import Chart from 'chart.js';
 
+Chart.defaults.global.defaultFontColor = '#EDEDED';
+
 export default function drawCharts(skills, CANVAS_ID_MD, CANVAS_ID_XS){
   let chartValues = Object.keys(skills).map(skill => skills[skill]),
       chartDataRadial = {
@@ -7,9 +9,9 @@ export default function drawCharts(skills, CANVAS_ID_MD, CANVAS_ID_XS){
         datasets : [
           {
             label : 'My Skills',
-            backgroundColor: "rgba(230, 243, 211, 0.5)",
-            borderColor: "rgba(193, 208, 170, 0.8)",
-            pointBackgroundColor: "rgba(193, 208, 170, 0.8)",
+            backgroundColor: "rgba(237, 237, 237,0.3)",
+            borderColor: "#62D4FF",
+            pointBackgroundColor: "#62D4FF",
             pointBorderColor: "#fff",
             pointHoverBackgroundColor: "#fff",
             pointHoverBorderColor: "rgba(193, 208, 170, 0.8)",
@@ -22,7 +24,7 @@ export default function drawCharts(skills, CANVAS_ID_MD, CANVAS_ID_XS){
         datasets : [
           {
             label : 'My Skills',
-            backgroundColor: "rgba(193, 208, 170, 1)",
+            backgroundColor: "#EDEDED",
             data: chartValues
           }
         ]
@@ -39,9 +41,10 @@ export default function drawCharts(skills, CANVAS_ID_MD, CANVAS_ID_XS){
         responsive: true,
         maintainAspectRatio: false,
           scale: {
-              ticks: {
-                  beginAtZero: true
-              }
+            ticks: {
+              beginAtZero: true,
+              backdropColor : '#00131A'
+            }
           }
       }
     });
@@ -52,11 +55,16 @@ export default function drawCharts(skills, CANVAS_ID_MD, CANVAS_ID_XS){
         options: {
           responsive: true,
           maintainAspectRatio: false,
-            scale: {
-                ticks: {
-                    beginAtZero: true
-                }
-            }
+          scales: {
+            xAxes: [{
+              gridLines: {
+                display: true
+              },
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
         }
     });
   }, 0);

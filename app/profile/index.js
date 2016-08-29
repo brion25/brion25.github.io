@@ -36,9 +36,9 @@ function Profile(React){
     );
   }
 
-  function _renderPreviousJobs(job){
+  function _renderPreviousJobs(job, i){
     return (
-      <li className="my-previous-jobs-job">
+      <li className="my-previous-jobs-job" key={'job' + i}>
         <div>
           <h3>{job.title} <small> at {job.company.name}</small></h3>
           <small>{job.date.start} - {job.date.end}</small>

@@ -1,7 +1,7 @@
 .page-transition{
   &-enter, &-leave{
     transition: all $animationType;
-    background-color: $backgroundColorNoOpacity;
+    background-color: $swamp;
     width: 100%;
     height : 100%;
   }
@@ -16,7 +16,7 @@
 
   &-leave{
     z-index:9999;
-    box-shadow: -5px 5px 5px $backgroundColorStrongNoOpacity;
+    box-shadow: -5px 5px 5px $astronautBlue;
     top:0;
     position: absolute;
   }
