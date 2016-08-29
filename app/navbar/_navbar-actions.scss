@@ -1,7 +1,7 @@
 .navbar-actions{
-  background: $colorThird;
-  border-bottom:1px solid $colorFourth;
-  border-right:1px solid $colorFourth;
+  background: $astronautBlue;
+  border-bottom:1px solid $abbey;
+  border-right:1px solid $abbey;
   height : 2.5em;
 
   .search-mode{
@@ -18,7 +18,7 @@
     left : 2.5em;
     display: flex;
     align-items: center;
-    color:$colorFirst;
+    color:$swamp;
     background-color: white;
     padding:0;
     transition: all $animationType;
@@ -81,7 +81,7 @@
         }
         input{
           display: initial;
-          background: $colorSixth;
+          background: $white;
         }
       }
 
@@ -103,7 +103,7 @@
     .search-icon{
       font-size: 1em;
       margin-right: 0.5em;
-      color:$colorFirst;
+      color:$swamp;
     }
   }
 

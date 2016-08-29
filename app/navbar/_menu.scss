@@ -2,7 +2,7 @@
   height:0;
   transition: all $animationType;
   overflow: hidden;
-  background-color: $menuColor;
+  background-color: $malibu;
   border-bottom: none;
 
   &-options{
@@ -43,8 +43,8 @@
       bottom: 0;
       width: 100%;
       text-align: center;
-      color:$menuTooltipColor;
-      background: $menuTooltipColor;
+      color:$blueCharcoal;
+      background: $blueCharcoal;
       padding : 0;
       max-height: 0;
       overflow: hidden;
@@ -52,7 +52,7 @@
     }
 
      &-content{
-       background: $menuOptionColor;
+       background: $veniceBlue;
        color:white;
        display: flex;
        flex-direction: column;
@@ -84,6 +84,6 @@
 
   &.active{
     height : $menuHeight;
-    border-bottom:1px solid $colorFourth;
+    border-bottom:1px solid $abbey;
   }
 }

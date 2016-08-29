@@ -4,7 +4,7 @@
   &-description{
     display: flex;
     flex-direction: column;
-    border-right: 2px solid $colorFourth;
+    border-right: 2px solid $abbey;
     padding: 0;
     justify-content: center;
     align-items: center;
@@ -120,7 +120,7 @@
         overflow: hidden;
         display: flex;
         align-items: center;
-        background: $colorFifth;
+        background: $malibu;
         border-top-left-radius: $postBorderRadius;
         border-top-right-radius: $postBorderRadius;
         img{
@@ -131,8 +131,8 @@
       &-info{
         display: flex;
         flex-direction: row;
-        background-color: $colorThird;
-        border: 1px solid $colorFifth;
+        background-color: $astronautBlue;
+        border: 1px solid $malibu;
         border-top: none;
         padding: 0.5em;
         border-bottom-left-radius: $postBorderRadius;
@@ -166,13 +166,19 @@
           align-items: center;
           justify-content: center;
           i{
-            font-size: 2em;
-            padding: 0.2em;
+            font-size: 10px;
+            padding: 0.25em;
             border-radius: 50%;
-            background-color: $colorFifth;
+            background-color: $malibu;
+            color : $swamp;
             width: 1em;
             height: 1em;
             text-align: center;
+
+            @media only screen and (min-width: 62em){
+              font-size: 14px;
+              padding: 0.5em;
+            }
           }
         }
       }

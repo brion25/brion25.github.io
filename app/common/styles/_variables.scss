@@ -1,26 +1,23 @@
-$colorFirst : #00131A;
-$colorSecond : $colorFirst;
-$colorThird : #004058;
-$colorFifth :  #62D4FF;
-$backgroundBorderColor : rgba(230, 243, 211, 1);
-$colorFourth : #464A4C;
+//Colors
+$swamp : #00131A;
+$astronautBlue : #004058;
+$malibu :  #62D4FF;
+$abbey : #464A4C;
+$blueCharcoal : #021620;
+$white : white;
+$gallery : #EDEDED;
+$dodgerBlue : #1da1f2;
+$easternBlue : #1985bc;
+$veniceBlue : #075379;
 
-$colorSixth : white;
-
-$fontColor : #EDEDED;
-
-$twitterColor : #1da1f2;
-$linkedinColor : #1985bc;
-
+//Animation
 $animationType : 0.5s ease;
-
-$menuHeight : 400px;
-$menuOptionHeight : $menuHeight/3;
-$menuOptionColor : #075379;
-$menuColor : #76cbff;
-$menuTooltipColor : #021620;
-
 $animationLeaveTopStart : 0;
 $animationLeaveTopEnd : 800px;
 
+//Menu
+$menuHeight : 400px;
+$menuOptionHeight : $menuHeight/3;
+
+//Other
 $postBorderRadius : 5px;
