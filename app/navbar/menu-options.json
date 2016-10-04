@@ -18,5 +18,15 @@
       "type" : "inner",
       "url" : "/blog"
     }
+  },
+  {
+    "id" : "portfolio",
+    "label" : "Portfolio",
+    "fa" : "fa-files-o",
+    "tooltip" : "See my portfolio",
+    "link" : {
+      "type" : "inner",
+      "url" : "/portfolio"
+    }
   }
 ]

@@ -88,17 +88,14 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding:0.5em;
     flex-direction: column;
-    height: calc(100% - 1em);
+    height: calc(100% - 5em);
     overflow: auto;
 
     &-wrapper{
-      height: 70%;
-      @media only screen and (min-width: 62em){
-        height:100%;
-      }
+      height: 100%;
     }
 
     & > a{
@@ -116,7 +113,10 @@
       flex-direction: column;
 
       &-image{
-        max-height: 10em;
+        max-height: 15em;
+        @media only screen and (min-width: 62em){
+          max-height: 12.5em;
+        }
         overflow: hidden;
         display: flex;
         align-items: center;

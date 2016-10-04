@@ -1,0 +1,65 @@
+.portfolio{
+  height: 100%;
+  &-items{
+    display: flex;
+    flex-direction: column;
+    height:calc(100% - 5em);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  &-item{
+    max-width:25%;
+    margin:2%;
+    position: relative;
+    background-color: $gallery;
+    padding:1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden !important;
+    transition: all $animationType;
+
+    *{
+      color:$swamp;
+    }
+
+    &:hover{
+      img{
+        height:7em;
+      }
+    }
+
+    &-img{
+      height:5em;
+      overflow: hidden !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5em;
+
+      img{
+        height:5em;
+        transition: all $animationType;
+      }
+    }
+
+    &-info{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-type{
+      margin-right: 0.25em;
+      font-size: 1em;
+      width: 1.5em;
+    }
+
+    a{
+      text-decoration: none;
+    }
+  }
+}

@@ -11,6 +11,7 @@
     justify-content: center;
     height : $menuHeight;
     perspective: 2000px;
+    flex-wrap: wrap;
   }
 
   &-option{
@@ -34,14 +35,24 @@
       .menu-option-tooltip{
         max-height: 50px;
         color: white;
-        padding:2.5px 0;
+        padding:10px 0 2.5px;
+      }
+    }
+
+    &.inner{
+      .menu-option-content{
+        background: $blueCharcoal;
+      }
+
+      .menu-option-tooltip{
+        background: $veniceBlue;
       }
     }
 
     &-tooltip{
       position: absolute;
-      bottom: 0;
-      width: 100%;
+      bottom: -0.75em;
+      width: calc(100% - 1em);
       text-align: center;
       color:$blueCharcoal;
       background: $blueCharcoal;
@@ -49,6 +60,10 @@
       max-height: 0;
       overflow: hidden;
       transition: max-height $animationType, color $animationType, padding $animationType;
+
+      &-wrapper{
+        margin:0.5em;
+      }
     }
 
      &-content{
@@ -85,5 +100,9 @@
   &.active{
     height : $menuHeight;
     border-bottom:1px solid $abbey;
+
+    .menu-options{
+      overflow: auto;
+    }
   }
 }

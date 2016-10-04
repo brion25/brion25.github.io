@@ -9,7 +9,6 @@ function Navbar(React){
   const SearchMode = searchMode(React);
 
   const Wrapper = (props) => {
-    console.log(props);
 
     return (
       <div className="navbar">
