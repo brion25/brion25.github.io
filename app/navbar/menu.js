@@ -2,12 +2,25 @@ import {Link} from 'react-router';
 
 import * as types from './../actions';
 import menuOptions from './menu-options.json';
+import profile from './../common/profiles/profile.json';
 
 function Menu (React){
   const Wrapper = (props) => {
+    let menuLinks = menuOptions.concat(profile.externalProfiles.map((profile) => {
+      return {
+        id : profile.name.toLowerCase(),
+        label : profile.name,
+        fa : `fa-${profile.name.toLowerCase() !== 'npm' ? profile.name.toLowerCase() : 'th-large'}`,
+        tooltip : `See my profile on ${profile.name}`,
+        link : {
+          type : 'outer',
+          url : profile.url
+        }
+      }
+    }))
     return (
       <div className="menu-options">
-        {menuOptions.map(_renderMenuOptions)}
+        {menuLinks.map(_renderMenuOptions)}
       </div>
     );
 
@@ -15,7 +28,7 @@ function Menu (React){
       switch(option.link.type){
         case 'inner':
           return (
-            <div key={option.id} onClick={closeMenu} className="menu-option">
+            <div key={option.id} onClick={closeMenu} className={`menu-option ${option.link.type}`}>
               <Link to={option.link.url}>
                 {_formatOption(option)}
               </Link>
@@ -23,7 +36,7 @@ function Menu (React){
           );
         case 'outer':
           return (
-            <div key={option.id} onClick={closeMenu} className="menu-option">
+            <div key={option.id} onClick={closeMenu} className={`menu-option ${option.link.type}`}>
               <a href={option.link.url} target="_blank">
                 {_formatOption(option)}
               </a>
@@ -34,7 +47,7 @@ function Menu (React){
 
     function _formatOption(option){
       return (
-        <div>
+        <div className="menu-option-tooltip-wrapper">
           <div className="menu-option-tooltip">
             {option.tooltip}
           </div>

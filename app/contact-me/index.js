@@ -1,6 +1,5 @@
 function ContactMe(React){
   const Wrapper = (props) => {
-    console.log(props);
     const self = this;
     const profile = props.profile.rawProfile;
 
