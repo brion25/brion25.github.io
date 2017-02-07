@@ -1,0 +1,33 @@
+.contact-info {
+  font-size: 1.35em;
+  margin: 0.25em 0;
+  padding: 0.2em 0;
+  position: relative;
+
+  &:before {
+    content: ' ';
+    position: absolute;
+    background: black;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    &:before {
+      width: 125%;
+      left: -12.5%;
+    }
+
+    i {
+      transform: rotate(360deg);
+    }
+  }
+
+  i {
+    transition: all 0.3s ease-in-out;
+    margin-right: 0.35em;
+  }
+}

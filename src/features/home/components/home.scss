@@ -1,0 +1,26 @@
+@import "../../../common/scss/helpers";
+@import "./info";
+
+.home {
+  @extend .cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .title,.sub-title {
+    margin: 0;
+  }
+
+  .title {
+    margin-top: 0.5em;
+    margin-bottom: 0.25em;
+  }
+
+  .sub-title {
+    margin-bottom: 0.5em;
+    a {
+      margin-left: 0.3em;
+    }
+  }
+}

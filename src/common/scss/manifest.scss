@@ -1,0 +1,11 @@
+@import "./helpers";
+
+html, body, #root {
+  @extend .cover;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  background-color: white;
+}
