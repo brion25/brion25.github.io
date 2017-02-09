@@ -14,8 +14,12 @@ export default () => {
         Senior Javascript Developer
         <a href="https://www.unosquare.com/" target="_blank">@Unosquare</a>
       </h2>
-      {contact.map(({nickname, icon}, i) => (
-        <a key={`contact-${i}`} className="contact-info">
+      {contact.map(({nickname, icon, url}, i) => (
+        <a
+          target="_blank"
+          href={url}
+          key={`contact-${i}`}
+          className={`contact-info ${icon.split('-')[1]}`}>
           <i className={`fa ${icon}`}></i>
           {nickname}
         </a>
