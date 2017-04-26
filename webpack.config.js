@@ -8,7 +8,8 @@ const config = getConfig({
   html: function(context) {
     return {
       'index.html': context.defaultTemplate({
-        head: '<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">'
+        head: '<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">',
+        html: '<div id="root"></div><div id="particles-js"></div>'
       })
     }
   }
