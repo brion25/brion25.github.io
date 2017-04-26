@@ -15,7 +15,5 @@ setTimeout(() => {
     document.getElementById('root')
   )
 
-  console.log(particleConfig)
-
   particlesJS('particles-js', particleConfig)
 }, 0)
