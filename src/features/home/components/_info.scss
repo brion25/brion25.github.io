@@ -1,7 +1,5 @@
 @media (max-width: 640px) {
   .info {
-    overflow: auto;
-
     img {
       width: 7.5em;
     }
@@ -25,6 +23,7 @@
 }
 
 .info {
+  overflow: auto;
   z-index: 100;
 
   * {
