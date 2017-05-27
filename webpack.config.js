@@ -3,7 +3,7 @@ const getConfig = require('hjs-webpack')
 
 const config = getConfig({
   in: 'src/app.js',
-  out: '/',
+  out: path.resolve(__dirname, './dist'),
   clearBeforeBuild: true,
   html: function(context) {
     return {
