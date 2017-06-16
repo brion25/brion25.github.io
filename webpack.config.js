@@ -11,7 +11,7 @@ const config = getConfig({
         head: `
             <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
             <meta property='og:title' content="Brion25 WebSite"/>
-            <meta property='og:image' content="https://raw.githubusercontent.com/brion25/brion25.github.io/master/src/common/assets/cara.png"/>
+            <meta property='og:image' content="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAsLAAAAJGI1NWFjMWY2LTY4NTQtNGY3Yy1iOWIxLTQzYzBkNTYwM2FlMg.jpg"/>
             <meta property='og:description' content="I'm a JavaScript Ninja focused on developing the most proficient and scalable WebApps"/>
             <meta property='og:url' content="http://brion25.github.io/" />
             `,
