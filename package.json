@@ -1,49 +1,40 @@
 {
-  "name": "my-page",
-  "version": "2.0.0",
-  "description": "My Personal Web Page",
+  "name": "brion25.github.io",
+  "version": "3.0.0",
+  "description": "Personal Web page",
+  "main": "index.js",
   "scripts": {
-    "start": "hjs-dev-server",
-    "build": "node ./node_modules/webpack/bin/webpack.js  --config webpack.config.js --progress --colors"
+    "build": "rollup -c",
+    "build:watch": "rollup -c --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brion25/brion25.git"
+    "url": "git+https://github.com/brion25/brion25.github.io.git"
   },
   "keywords": [
-    "React",
-    "Webpack"
+    "Polymer",
+    "CSS"
   ],
   "author": "JC Gomez",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/brion25/brion25/issues"
+    "url": "https://github.com/brion25/brion25.github.io/issues"
   },
-  "homepage": "https://github.com/brion25/brion25#readme",
+  "homepage": "https://github.com/brion25/brion25.github.io#readme",
   "devDependencies": {
-    "autoprefixer": "^6.7.0",
-    "babel-core": "^6.22.1",
-    "babel-loader": "^6.2.10",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-react": "^6.22.0",
-    "babel-preset-react-hmre": "^1.1.1",
-    "css-loader": "^0.26.1",
-    "file-loader": "^0.9.0",
-    "hjs-webpack": "^8.4.3",
-    "json-loader": "^0.5.4",
-    "less": "^2.7.2",
-    "node-sass": "^4.3.0",
-    "postcss-loader": "^1.2.2",
-    "sass-loader": "^4.1.1",
-    "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",
-    "webpack": "^1.14.0"
+    "rollup": "^0.65.2",
+    "rollup-plugin-commonjs": "^9.1.6",
+    "rollup-plugin-fill-html": "^1.1.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-serve": "^0.4.2",
+    "rollup-watch": "^4.3.1"
   },
   "dependencies": {
-    "font-awesome": "^4.7.0",
-    "font-awesome-webpack": "0.0.4",
-    "particles.js": "^2.0.0",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "@polymer/app-route": "^3.0.2",
+    "@polymer/iron-pages": "^3.0.1",
+    "@polymer/iron-selector": "^3.0.1",
+    "@polymer/polymer": "^3.0.5",
+    "fa-icon-polymer": "git+https://github.com/oliverandrich/fa-icon-polymer.git"
   }
 }
