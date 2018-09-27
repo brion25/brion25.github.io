@@ -1,16 +1,16 @@
 const styleElement = document.createElement('dom-module')
 
-// Color palette: https://coolors.co/1c77c3-39a9db-40bcd8-00487c-4bb3fd
+// Color palette: https://coolors.co/ffffff-00171f-003459-007ea7-00a8e8
 
 styleElement.innerHTML = `
 <template>
    <style>
     :host {
-      --dark-cerulean: #00487C;
-      --bright-navy: #1C77C3;
-      --maximum-blue: #39A9DB;
-      --sea-serpent: #40BCD8;
-      --picton-blue: #4BB3FD;
+      --vivid-cerulean: #00A8E8;
+      --white: #FFFFFF;
+      --cerulean: #007EA7;
+      --rich-black: #00171F;
+      --prusian-blue: #003459;
     }
    </style>
  </template>

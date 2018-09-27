@@ -4,3 +4,4 @@ Hi this is the version 3 of my web app
 - Polymer 3
 - Rollup
 - CSS3 custom variables
+- Font awesome

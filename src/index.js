@@ -18,10 +18,22 @@ class MyApp extends PolymerElement {
                 position: absolute;
                 z-index: -1;
                 top: 0;
-                left: 0;
-                height: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                height: calc(100% - 25px);
+                padding-top: 25px;
                 width: 100%;
-                background-color: var(--sea-serpent);
+                background-color: var(--white);
+                color: var(--rich-black);
+                max-width: 1020px;
+            }
+            
+            @media only screen and (max-width: 750px) {
+                .content {
+                    padding-top: 0;
+                    height: calc(100% - 60px);
+                    padding-bottom: 60px;                                        
+                }
             }
         </style>
         <app-location route="{{route}}" use-hash-as-path></app-location>
