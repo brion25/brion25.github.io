@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - "stable"
-before_deploy:
+scripts:
   - "npm run build"
 deploy:
   provider: pages
@@ -10,3 +10,5 @@ deploy:
   local_dir: dist
   on:
     branch: dev
+after_deploy:
+- "echo 'deployed!'"
