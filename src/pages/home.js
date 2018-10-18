@@ -12,13 +12,15 @@ class Home extends PolymerElement {
       <style include="common-styles">
         :host {
           --grid-row-start: 1;
-          --grid-row-end: 3;
+          --grid-row-end: 4;
           --grid-column-start: 1;
           --grid-column-end: 2;
           --grid-template-columns: 220px 1fr;
-          --grid-template-rows: 1fr 1fr;
+          --grid-template-rows: 80px 35px 35px;
           
           --presentation-width: 70%;
+          --presentation-social-wrap: nowrap;
+          --presentation-social-item-margin-bottom: 0;
           
           --stack-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         }
@@ -81,6 +83,29 @@ class Home extends PolymerElement {
           color: var(--darker);
         }
         
+        .presentation__social {
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: var(--presentation-social-wrap);
+        }
+        
+        .presentation__social-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(__darker);
+          margin-bottom: var(--presentation-social-item-margin-bottom);
+        }
+        
+        .presentation__social-item my-svg {
+          --icon-size: 20px;
+        }
+        
+        .presentation__social-item-text {
+          margin-left: 5px;
+          margin-right: 20px;
+        }
+        
         .stack {
           padding-bottom: 10px;
         }
@@ -108,8 +133,13 @@ class Home extends PolymerElement {
         @media only screen and (max-width: 750px) {
           .presentation {
             --grid-template-columns: 1fr;
-            --grid-template-rows: 180px 1fr 1fr;
+            --grid-template-rows: 160px 1fr 1fr;
             --presentation-width: 80%;
+          }
+          
+          .presentation__social {
+            --presentation-social-wrap: wrap;
+            --presentation-social-item-margin-bottom: 10px;
           }
           
           my-logo {
@@ -123,7 +153,15 @@ class Home extends PolymerElement {
           .presentation__desc {
             padding-top: 15px;
             text-align: center;
-          }          
+          }
+          
+          my-svg {
+            --icon-size: 50px;
+          }
+
+          .stack__technologies {
+            --stack-template-columns: 1fr 1fr 1fr 1fr;
+          }
         }
       </style>
       <div class="container">
@@ -137,6 +175,16 @@ class Home extends PolymerElement {
               JavaScript Ninja
               <a class="presentation__institution" href="https://www.unosquare.com/" target="_blank"> @Unosquare</a>
             </h3>
+            <div class="presentation__social">
+              <dom-repeat items="{{social}}">
+                <template>
+                  <a class="presentation__social-item" target="_blank" href="{{item.link}}">
+                    <my-svg icon="{{item.icon}}"></my-svg>
+                    <span class="presentation__social-item-text">{{item.icon}}</span>
+                  </a>
+                </template>
+              </dom-repeat>
+            </div>
           </div>
         </div>
         <div class="stack__wrapper">
@@ -162,17 +210,63 @@ class Home extends PolymerElement {
   static get properties() {
     return {
       stack: {
-        type: Object,
+        type: Array,
         value() {
           return [
-            'angular',
+            'JS',
+            'css',
+            'html',
+            'java',
+            'dart',
             'react',
-            'angular',
-            'angular',
-            'angular',
-            'angular',
-            'angular',
-            'angular',
+            'node',
+            'graphql',
+            'apollo',
+            'sass',
+            'redux',
+            'mobx',
+            'polymer',
+            'SQL',
+            'NoSQL',
+            'gulp',
+            'npm',
+            'webpack',
+            'rollup',
+            'AWS',
+            'git',
+            'github',
+            'TDD',
+          ]
+        }
+      },
+      social: {
+        type: Array,
+        value() {
+          return [
+            {
+              icon: 'github',
+              link: 'https://github.com/brion25'
+            },
+            {
+              icon: 'npm',
+              link: 'https://www.npmjs.com/~brion25'
+            },
+            {
+              icon: 'twitter',
+              link: 'https://twitter.com/bartsis'
+            },
+            {
+              icon: 'codepen',
+              link: 'https://codepen.io/bartsis/'
+            },
+            {
+              icon: 'medium',
+              link: 'https://medium.com/@bartsis'
+            },
+            {
+              icon: 'blogger',
+              link: 'http://brion25.blogspot.com/'
+            }
           ]
         }
       }
