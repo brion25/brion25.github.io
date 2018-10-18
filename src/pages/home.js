@@ -1,3 +1,5 @@
+import '@polymer/polymer/lib/elements/dom-repeat'
+
 import { PolymerElement, html } from '@polymer/polymer/polymer-element'
 
 import '../components/logo'
@@ -79,6 +81,10 @@ class Home extends PolymerElement {
           color: var(--darker);
         }
         
+        .stack {
+          padding-bottom: 10px;
+        }
+        
         .stack__header {
           text-align: center;
         }
@@ -93,6 +99,10 @@ class Home extends PolymerElement {
           flex-direction: column;
           align-items: center;
           justify-content: center;
+        }
+        
+        .stack__technologies-item__header {
+          text-transform: capitalize;
         }
         
         @media only screen and (max-width: 750px) {
@@ -134,19 +144,39 @@ class Home extends PolymerElement {
             <hr />
             <h3 class="stack__header">My Stack:</h3> 
             <div class="stack__technologies">
-              <div class="stack__technologies-item">
-                <my-svg icon="angular"></my-svg>
-                <h3>Angular</h3>              
-              </div>
-              <div class="stack__technologies-item">
-                <my-svg icon="react"></my-svg>
-                <h3>React</h3>              
-              </div>
+              <dom-repeat items="{{stack}}">
+                <template>
+                  <div class="stack__technologies-item">
+                    <my-svg icon="{{item}}"></my-svg>
+                    <h3 class="stack__technologies-item__header">{{item}}</h3>
+                  </div>
+                </template>
+              </dom-repeat>
             </div>         
           </div>
         </div>
       </div>
     `
+  }
+
+  static get properties() {
+    return {
+      stack: {
+        type: Object,
+        value() {
+          return [
+            'angular',
+            'react',
+            'angular',
+            'angular',
+            'angular',
+            'angular',
+            'angular',
+            'angular',
+          ]
+        }
+      }
+    }
   }
 }
 
