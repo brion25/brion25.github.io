@@ -1,6 +1,7 @@
 import '@polymer/polymer/lib/elements/dom-repeat'
 import '@polymer/iron-selector/iron-selector'
-import 'fa-icon-polymer/fa-icon'
+import '@polymer/iron-icon/iron-icon.js';
+import '@polymer/iron-icons/iron-icons.js';
 
 import '../utils/shared-styles'
 
@@ -18,8 +19,9 @@ class Nav extends PolymerElement {
             left: 0;
             width: 100%;
             overflow: hidden;
-            background-color: var(--rich-black);
-            box-shadow: 0 0px 2px var(--prusian-blue);
+            background-color: var(--darkest);
+            box-shadow: 0 0px 2px var(--darker);
+            z-index: 9999;
         }
         
         .nav iron-selector {
@@ -29,26 +31,21 @@ class Nav extends PolymerElement {
         
         .link {
             padding: 10px 20px;
-            display: inline-block;
             text-decoration: none;
-            color: var(--white);
+            color: var(--lighter);
             text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .link.iron-selected {
-            background-color: var(--white);
-            color: var(--rich-black);
+            background-color: var(--lighter);
+            color: var(--darkest);
         }
         
-        fa-icon.icon-link {
-            --icon-background-color: var(--rich-black);
-            --icon-color: var(--white);
+        iron-icon {
             margin-right: 5px;
-        }
-        
-        .iron-selected fa-icon.icon-link {
-            --icon-background-color: var(--white);;
-            --icon-color: var(--prusian-blue)
         }
         
         @media only screen and (max-width: 750px) {
@@ -70,15 +67,15 @@ class Nav extends PolymerElement {
       <nav class="nav">
         <iron-selector selected="[[page]]" attr-for-selected="name">
           <a name="[[routes.home.name]]" href="[[routes.home.path]]" class="link">
-            <fa-icon class="icon-link" icon-name="home"></fa-icon>
+            <iron-icon icon="home"></iron-icon>
             [[routes.home.name]]
           </a>
           <a name="[[routes.contact.name]]" href="[[routes.contact.path]]" class="link">
-            <fa-icon class="icon-link" icon-name="envelope"></fa-icon>
+            <iron-icon icon="mail"></iron-icon>
             [[routes.contact.name]]
           </a>
           <a name="[[routes.challenges.name]]" href="[[routes.challenges.path]]" class="link">
-            <fa-icon class="icon-link" icon-name="file-alt"></fa-icon>
+            <iron-icon icon="receipt"></iron-icon>
             [[routes.challenges.name]]
           </a>
         </iron-selector>

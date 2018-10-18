@@ -28,13 +28,16 @@
     "rollup-plugin-fill-html": "^1.1.0",
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-serve": "^0.4.2",
+    "rollup-plugin-string": "^2.0.2",
     "rollup-watch": "^4.3.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.4.1",
     "@polymer/app-route": "^3.0.2",
+    "@polymer/iron-icons": "^3.0.1",
     "@polymer/iron-pages": "^3.0.1",
     "@polymer/iron-selector": "^3.0.1",
     "@polymer/polymer": "^3.0.5",
-    "fa-icon-polymer": "git+https://github.com/oliverandrich/fa-icon-polymer.git"
+    "@webcomponents/webcomponentsjs": "^2.1.3"
   }
 }

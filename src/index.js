@@ -1,3 +1,5 @@
+import '@webcomponents/webcomponentsjs/webcomponents-bundle'
+
 import '@polymer/polymer/lib/elements/dom-repeat'
 import '@polymer/app-route/app-location'
 import '@polymer/app-route/app-route'
@@ -14,25 +16,31 @@ class MyApp extends PolymerElement {
   static get template() {
     return html`
         <style include="common-styles">
+            :host {
+                --top-spacing: 40px;
+            }
+        
             .content {
                 position: absolute;
-                z-index: -1;
-                top: 0;
+                top: var(--top-spacing);
                 left: 50%;
                 transform: translateX(-50%);
-                height: calc(100% - 25px);
-                padding-top: 25px;
+                height: calc(100% - var(--top-spacing));
                 width: 100%;
-                background-color: var(--white);
-                color: var(--rich-black);
                 max-width: 1020px;
+            }
+            .content__wrapper {
+                width: 100%;
+                height: 100%;
+                background-color: var(--lighter);
+                color: var(--darkest);
             }
             
             @media only screen and (max-width: 750px) {
                 .content {
-                    padding-top: 0;
+                    --top-spacing: 0px;                                      
                     height: calc(100% - 60px);
-                    padding-bottom: 60px;                                        
+                    padding-bottom: 60px;  
                 }
             }
         </style>
@@ -45,10 +53,12 @@ class MyApp extends PolymerElement {
         
         <my-nav page$="{{page}}"></my-nav>
         
-        <div class="content">
-          <iron-pages selected="[[page]]" attr-for-selected="name" role="main">
-              <my-home name="home"></my-home>
-          </iron-pages>        
+        <div class="content__wrapper">
+          <div class="content">
+            <iron-pages selected="[[page]]" attr-for-selected="name" role="main">
+                <my-home name="home"></my-home>
+            </iron-pages>        
+          </div>        
         </div>
     `
   }

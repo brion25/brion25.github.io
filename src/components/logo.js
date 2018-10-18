@@ -10,6 +10,9 @@ class Logo extends PolymerElement {
           --logo-color: black;
           --logo-scale: 1;
           --logo-opacity: 1;
+          --logo-animation-delay: 0s;
+          --logo-animation-duration: 0.75s;
+          --logo-initial-top: 0px;
         }
       
         .container {
@@ -19,12 +22,36 @@ class Logo extends PolymerElement {
           height: 130px;
         }
         
+        .container:hover svg {
+          animation-name: bounce;
+          animation-duration: var(--logo-animation-duration);
+          animation-delay: var(--logo-animation-delay);
+        }
+        
+        .container:hover svg:nth-child(4) {
+          --logo-animation-delay: 0.15s;
+        }
+        
+        .container:hover svg:nth-child(3) {
+          --logo-animation-delay: 0.3s;
+        }
+        
+        .container:hover svg:nth-child(2) {
+          --logo-animation-delay: 0.45s;
+        }
+        
+        .container:hover svg:nth-child(1) {
+          --logo-animation-delay: 0.6s;
+        }
+        
         svg {
           height: 86.062%;
           width: 100%;
           transform: skewX(16deg) rotate(-35deg) scale(var(--logo-scale));
           position: absolute;
           opacity: var(--logo-opacity);
+          transition: all ease-in var(--logo-animation-duration);
+          top: var(--logo-initial-top);
         }
         
         svg path {
@@ -34,27 +61,42 @@ class Logo extends PolymerElement {
         svg:nth-child(4) {
           --logo-scale: 1;
           --logo-opacity: 1;
+          --logo-initial-top: 0px;
         }
 
         svg:nth-child(3) {
           --logo-scale: 0.8;
           --logo-opacity: 0.75;
+          --logo-initial-top: 5px;
           left: -22px;
-          top: 5px;
         }
 
         svg:nth-child(2) {
           --logo-scale: 0.6;
           --logo-opacity: 0.5;
+          --logo-initial-top: 10px;
           left: -40px;
-          top: 10px;
         }
 
         svg:nth-child(1) {
           --logo-scale: 0.4;
           --logo-opacity: 0.25;
+          --logo-initial-top: 15px;
           left: -55px;
-          top: 15px;
+        }
+        
+        @keyframes bounce {
+          33% {
+            top: -25%;
+          }
+          
+          66% {
+            top: 10%;
+          }
+          
+          100% {
+            top: var(--logo-initial-top);
+          }          
         }
       </style>
       <div class="container">

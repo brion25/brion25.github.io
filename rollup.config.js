@@ -2,6 +2,7 @@ import commonjs from 'rollup-plugin-commonjs'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import html from 'rollup-plugin-fill-html'
 import serve from 'rollup-plugin-serve'
+import string from 'rollup-plugin-string'
 import { resolve } from 'path'
 
 export default {
@@ -20,6 +21,9 @@ export default {
       open: true,
       verbose: true,
       contentBase: resolve(__dirname, './dist')
+    }),
+    string({
+      include: '**/*.svg'
     })
   ]
 }

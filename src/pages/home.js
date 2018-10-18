@@ -1,6 +1,7 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element'
 
 import '../components/logo'
+import '../components/svg'
 import '../utils/shared-styles'
 
 class Home extends PolymerElement {
@@ -8,9 +9,6 @@ class Home extends PolymerElement {
     return html`
       <style include="common-styles">
         :host {
-          --transform-translate-x: -50%;
-          --transform-translate-y: -50%;
-
           --grid-row-start: 1;
           --grid-row-end: 3;
           --grid-column-start: 1;
@@ -19,6 +17,8 @@ class Home extends PolymerElement {
           --grid-template-rows: 1fr 1fr;
           
           --presentation-width: 70%;
+          
+          --stack-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         }
       
         h1,
@@ -27,15 +27,22 @@ class Home extends PolymerElement {
         }
         
         my-logo {
-          --logo-color: var(--prusian-blue);
+          --logo-color: var(--darker);
+        }
+        
+        my-svg {
+          --icon-color: var(--darker);
+          --icon-size: 65px;
+        }
+        
+        .container {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 200px;
         }
         
         .presentation {
-          position: absolute;
-          top: 200px;
-          left: 50%;
           display: grid;
-          transform: translate(var(--transform-translate-x), var(--transform-translate-y));
           grid-template-columns: var(--grid-template-columns);
           grid-template-rows: var(--grid-template-rows);
           width: var(--presentation-width);
@@ -60,13 +67,36 @@ class Home extends PolymerElement {
           margin-top: 0;
         }
         
-        .container {
-          padding-top: 400px;
+        .presentation__wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 300px;
+        }
+        
+        .presentation__institution {
+          text-decoration: none;
+          color: var(--darker);
+        }
+        
+        .stack__header {
+          text-align: center;
+        }
+        
+        .stack__technologies {
+          display: grid;
+          grid-template-columns: var(--stack-template-columns);
+        }
+        
+        .stack__technologies-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
         }
         
         @media only screen and (max-width: 750px) {
           .presentation {
-            --transform-translate-y: -200px;  
             --grid-template-columns: 1fr;
             --grid-template-rows: 180px 1fr 1fr;
             --presentation-width: 80%;
@@ -81,17 +111,39 @@ class Home extends PolymerElement {
           
           .presentation__name,
           .presentation__desc {
+            padding-top: 15px;
             text-align: center;
-          }
+          }          
         }
       </style>
       <div class="container">
-        <div class="presentation">
-          <div class="presentation__logo">
-            <my-logo></my-logo>          
+        <div class="presentation__wrapper">
+          <div class="presentation">
+            <div class="presentation__logo">
+              <my-logo></my-logo>          
+            </div>
+            <h1 class="presentation__name">Jose Carlos Ixcoatl Gomez Briones</h1>
+            <h3 class="presentation__desc">
+              JavaScript Ninja
+              <a class="presentation__institution" href="https://www.unosquare.com/" target="_blank"> @Unosquare</a>
+            </h3>
           </div>
-          <h1 class="presentation__name">Jose Carlos Ixcoatl Gomez Briones</h1>
-          <h3 class="presentation__desc">JavaScript Ninja</h3>
+        </div>
+        <div class="stack__wrapper">
+          <div class="stack">
+            <hr />
+            <h3 class="stack__header">My Stack:</h3> 
+            <div class="stack__technologies">
+              <div class="stack__technologies-item">
+                <my-svg icon="angular"></my-svg>
+                <h3>Angular</h3>              
+              </div>
+              <div class="stack__technologies-item">
+                <my-svg icon="react"></my-svg>
+                <h3>React</h3>              
+              </div>
+            </div>         
+          </div>
         </div>
       </div>
     `
