@@ -4,10 +4,8 @@ env:
 language: node_js
 node_js:
   - "stable"
-deploy:
-  provider: script
-  script: bash scripts/deploy.sh
-  on:
-    branch: dev
-after_deploy:
-- "echo 'deployed!'"
+branches:
+  only:
+    - dev
+script:
+  - bash scripts/deploy.sh
