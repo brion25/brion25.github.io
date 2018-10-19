@@ -4,8 +4,6 @@ env:
 language: node_js
 node_js:
   - "stable"
-script:
-  - "npm run build"
 deploy:
   provider: script
   script: bash scripts/deploy.sh

@@ -6,6 +6,7 @@ git config --global user.email "clark.kent@dailyplanet.org"
 git config --global user.name "Superman"
 
 # deploy
+npm run build
 ls
 cd dist
 ls
