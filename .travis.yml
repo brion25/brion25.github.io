@@ -2,7 +2,8 @@ language: node_js
 node_js:
   - "stable"
 branches:
-  only:
-    - dev
+  except:
+    - master
 script:
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash scripts/deploy.sh; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then npm run lint; fi'
