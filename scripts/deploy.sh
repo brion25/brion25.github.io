@@ -10,4 +10,4 @@ cd dist
 git init
 git add .
 git commit -m "Deploy to Github Pages"
-git push --force --quiet "https://${githubToken}@$github.com/brion25.github.io.git" master
+git push --force --quiet "https://${githubToken}@$github.com/brion25/brion25.github.io.git" master
