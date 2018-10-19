@@ -6,6 +6,7 @@ git config --global user.email "clark.kent@dailyplanet.org"
 git config --global user.name "Superman"
 
 # deploy
+ls
 echo -e "\e[92m-----> Building the App <-----"
 npm run build
 cd dist
