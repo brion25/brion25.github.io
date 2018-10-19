@@ -3,8 +3,8 @@ import '@polymer/polymer/lib/elements/dom-repeat'
 import { PolymerElement, html } from '@polymer/polymer/polymer-element'
 
 class Logo extends PolymerElement {
-  static get template() {
-    return html`
+    static get template() {
+        return html`
       <style>
         :host {
           --logo-color: black;
@@ -109,17 +109,17 @@ class Logo extends PolymerElement {
         </dom-repeat>
       </div>
     `
-  }
-
-  static get properties() {
-    return {
-      logoNodes: {
-        value() {
-          return [1,2,3,4]
-        }
-      }
     }
-  }
+
+    static get properties() {
+        return {
+            logoNodes: {
+                value() {
+                    return [1,2,3,4]
+                }
+            }
+        }
+    }
 }
 
 customElements.define('my-logo', Logo)

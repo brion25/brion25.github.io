@@ -25,40 +25,40 @@ import bundle from '@fortawesome/fontawesome-free/svgs/solid/file-archive.svg'
 import vial from '@fortawesome/fontawesome-free/svgs/solid/vial.svg'
 
 const ICON_MAP = {
-  TDD: vial,
-  webpack: bundle,
-  rollup: bundle,
-  NoSQL: database,
-  SQL: database,
-  polymer: code,
-  mobx: code,
-  redux: code,
-  apollo: code,
-  graphql: code,
-  dart: code,
-  html: htmlIcon,
-  JS: js,
-  AWS: aws,
-  npm,
-  git,
-  github,
-  java,
-  node,
-  docker,
-  sass,
-  gulp,
-  angular,
-  react,
-  css,
-  twitter,
-  codepen,
-  medium,
-  blogger
+    TDD: vial,
+    webpack: bundle,
+    rollup: bundle,
+    NoSQL: database,
+    SQL: database,
+    polymer: code,
+    mobx: code,
+    redux: code,
+    apollo: code,
+    graphql: code,
+    dart: code,
+    html: htmlIcon,
+    JS: js,
+    AWS: aws,
+    npm,
+    git,
+    github,
+    java,
+    node,
+    docker,
+    sass,
+    gulp,
+    angular,
+    react,
+    css,
+    twitter,
+    codepen,
+    medium,
+    blogger
 }
 
 class SVG extends PolymerElement {
-  static get template() {
-    return html`
+    static get template() {
+        return html`
       <style>
         :host {
           --icon-color: green;
@@ -72,28 +72,28 @@ class SVG extends PolymerElement {
       </style>
       <i class="icon"></i>
     `
-  }
-
-  static get properties() {
-    return {
-      icon: {
-        type: String
-      }
     }
-  }
 
-  connectedCallback() {
-    super.connectedCallback();
-
-    const icon = ICON_MAP[this.icon] || ''
-    const tag = document.createElement('p')
-
-    tag.innerHTML = icon
-
-    if (tag.firstChild) {
-      this.shadowRoot.querySelector('.icon').appendChild(tag.firstChild)
+    static get properties() {
+        return {
+            icon: {
+                type: String
+            }
+        }
     }
-  }
+
+    connectedCallback() {
+        super.connectedCallback()
+
+        const icon = ICON_MAP[this.icon] || ''
+        const tag = document.createElement('p')
+
+        tag.innerHTML = icon
+
+        if (tag.firstChild) {
+            this.shadowRoot.querySelector('.icon').appendChild(tag.firstChild)
+        }
+    }
 }
 
 customElements.define('my-svg', SVG)

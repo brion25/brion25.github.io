@@ -13,8 +13,8 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element'
 import { VIEW_HOME, VIEW_404 } from './utils/constants'
 
 class MyApp extends PolymerElement {
-  static get template() {
-    return html`
+    static get template() {
+        return html`
         <style include="common-styles">
             :host {
                 --top-spacing: 40px;
@@ -61,43 +61,43 @@ class MyApp extends PolymerElement {
           </div>        
         </div>
     `
-  }
-
-  static get properties() {
-    return {
-      page: {
-        type: String,
-        reflectToAttribute: true,
-        observer: '_pageChanged',
-        notify: true,
-      },
-      routeData: Object,
-      subroute: Object
     }
-  }
 
-  static get observers() {
-    return [
-      '_routePageChanged(routeData.view)'
-    ]
-  }
-
-  _routePageChanged(page) {
-    if (!page) {
-      this.page = VIEW_HOME
-    } else if ([VIEW_HOME].includes(page)) {
-      this.page = page
-    } else {
-      this.page = VIEW_404
+    static get properties() {
+        return {
+            page: {
+                type: String,
+                reflectToAttribute: true,
+                observer: '_pageChanged',
+                notify: true,
+            },
+            routeData: Object,
+            subroute: Object
+        }
     }
-  }
 
-  _pageChanged(page) {
-    switch(page){
-      case VIEW_HOME:
+    static get observers() {
+        return [
+            '_routePageChanged(routeData.view)'
+        ]
+    }
+
+    _routePageChanged(page) {
+        if (!page) {
+            this.page = VIEW_HOME
+        } else if ([VIEW_HOME].includes(page)) {
+            this.page = page
+        } else {
+            this.page = VIEW_404
+        }
+    }
+
+    _pageChanged(page) {
+        switch(page){
+        case VIEW_HOME:
         import('./pages/home')
+        }
     }
-  }
 }
 
 customElements.define('my-app', MyApp)

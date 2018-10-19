@@ -7,8 +7,8 @@ import '../components/svg'
 import '../utils/shared-styles'
 
 class Home extends PolymerElement {
-  static get template() {
-    return html`
+    static get template() {
+        return html`
       <style include="common-styles">
         :host {
           --grid-row-start: 1;
@@ -21,6 +21,9 @@ class Home extends PolymerElement {
           --presentation-width: 70%;
           --presentation-social-wrap: nowrap;
           --presentation-social-item-margin-bottom: 0;
+          --presentation-social-item-border-width: 0;
+          --presentation-social-item-padding: 0 10px 2px 2px;
+          --presentation-social-item-margin: -5px 10px 3px;
           
           --stack-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         }
@@ -93,8 +96,13 @@ class Home extends PolymerElement {
           display: flex;
           align-items: center;
           justify-content: center;
-          color: var(__darker);
+          text-decoration: none;
+          color: var(--darker);
           margin-bottom: var(--presentation-social-item-margin-bottom);
+        }
+                
+        .presentation__social-item:hover .presentation__social-item-text:before {
+          --presentation-social-item-border-width: 100%;
         }
         
         .presentation__social-item my-svg {
@@ -102,8 +110,22 @@ class Home extends PolymerElement {
         }
         
         .presentation__social-item-text {
-          margin-left: 5px;
-          margin-right: 20px;
+          display: inline-block;
+          position: relative;
+          text-transform: capitalize;
+          padding: var(--presentation-social-item-padding);
+          margin: var(--presentation-social-item-margin);
+        }
+        
+        .presentation__social-item-text:before {
+          content: ' ';
+          position: absolute;
+          border-bottom: 1px solid;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          transition: all 0.3s cubic-bezier(.17,.67,.83,.67);
+          width: var(--presentation-social-item-border-width);
         }
         
         .stack {
@@ -158,6 +180,11 @@ class Home extends PolymerElement {
           my-svg {
             --icon-size: 50px;
           }
+          
+        .presentation__social-item {
+          --presentation-social-item-margin: -5px 5px 0px;
+          --presentation-social-item-padding: 0 5px 2px 2px;
+        }
 
           .stack__technologies {
             --stack-template-columns: 1fr 1fr 1fr 1fr;
@@ -180,7 +207,7 @@ class Home extends PolymerElement {
                 <template>
                   <a class="presentation__social-item" target="_blank" href="{{item.link}}">
                     <my-svg icon="{{item.icon}}"></my-svg>
-                    <span class="presentation__social-item-text">{{item.icon}}</span>
+                    <div class="presentation__social-item-text">{{item.icon}}</div>
                   </a>
                 </template>
               </dom-repeat>
@@ -205,73 +232,74 @@ class Home extends PolymerElement {
         </div>
       </div>
     `
-  }
-
-  static get properties() {
-    return {
-      stack: {
-        type: Array,
-        value() {
-          return [
-            'JS',
-            'css',
-            'html',
-            'java',
-            'dart',
-            'react',
-            'node',
-            'graphql',
-            'apollo',
-            'sass',
-            'redux',
-            'mobx',
-            'polymer',
-            'SQL',
-            'NoSQL',
-            'gulp',
-            'npm',
-            'webpack',
-            'rollup',
-            'AWS',
-            'git',
-            'github',
-            'TDD',
-          ]
-        }
-      },
-      social: {
-        type: Array,
-        value() {
-          return [
-            {
-              icon: 'github',
-              link: 'https://github.com/brion25'
-            },
-            {
-              icon: 'npm',
-              link: 'https://www.npmjs.com/~brion25'
-            },
-            {
-              icon: 'twitter',
-              link: 'https://twitter.com/bartsis'
-            },
-            {
-              icon: 'codepen',
-              link: 'https://codepen.io/bartsis/'
-            },
-            {
-              icon: 'medium',
-              link: 'https://medium.com/@bartsis'
-            },
-            {
-              icon: 'blogger',
-              link: 'http://brion25.blogspot.com/'
-            }
-          ]
-        }
-      }
     }
-  }
+
+    static get properties() {
+        return {
+            stack: {
+                type: Array,
+                value() {
+                    return [
+                        'JS',
+                        'java',
+                        'react',
+                        'angular',
+                        'dart',
+                        'css',
+                        'html',
+                        'node',
+                        'graphql',
+                        'apollo',
+                        'sass',
+                        'redux',
+                        'mobx',
+                        'polymer',
+                        'SQL',
+                        'NoSQL',
+                        'gulp',
+                        'npm',
+                        'webpack',
+                        'rollup',
+                        'AWS',
+                        'git',
+                        'github',
+                        'TDD',
+                    ]
+                }
+            },
+            social: {
+                type: Array,
+                value() {
+                    return [
+                        {
+                            icon: 'github',
+                            link: 'https://github.com/brion25'
+                        },
+                        {
+                            icon: 'npm',
+                            link: 'https://www.npmjs.com/~brion25'
+                        },
+                        {
+                            icon: 'twitter',
+                            link: 'https://twitter.com/bartsis'
+                        },
+                        {
+                            icon: 'codepen',
+                            link: 'https://codepen.io/bartsis/'
+                        },
+                        {
+                            icon: 'medium',
+                            link: 'https://medium.com/@bartsis'
+                        },
+                        {
+                            icon: 'blogger',
+                            link: 'http://brion25.blogspot.com/'
+                        }
+                    ]
+                }
+            }
+        }
+    }
 }
 
 customElements.define('my-home', Home)

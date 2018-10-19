@@ -4,6 +4,7 @@
   "description": "Personal Web page",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint ./src",
     "build": "rollup -c",
     "build:watch": "rollup -c --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,6 +24,8 @@
   },
   "homepage": "https://github.com/brion25/brion25.github.io#readme",
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.7.0",
     "rollup": "^0.65.2",
     "rollup-plugin-commonjs": "^9.1.6",
     "rollup-plugin-fill-html": "^1.1.0",
