@@ -1,15 +1,15 @@
+env:
+  global:
+    - GITHUB_REPO: "user/repo"
 language: node_js
 node_js:
   - "stable"
 script:
   - "npm run build"
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $githubToken
-  local_dir: dist
+  provider: script
+  script: bash scripts/deploy.sh
   on:
     branch: dev
-    target-branch: master
 after_deploy:
 - "echo 'deployed!'"
