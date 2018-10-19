@@ -7,7 +7,7 @@ git config --global user.name "Superman"
 
 # deploy
 echo -e "\e[92m-----> Building the App <-----"
-npm install --silent
+npm install --silent > /dev/null
 npm run build
 cd dist
 echo -e "\e[92m-----> Deploying to Github <-----"
