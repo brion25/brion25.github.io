@@ -5,5 +5,9 @@ branches:
   only:
     - dev
 script:
-  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash scripts/deploy.sh; fi'
   - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then npm run lint; fi'
+deploy:
+  provider: script
+  script: bash scripts/deploy.sh
+  on:
+    branch: dev
