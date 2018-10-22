@@ -7,11 +7,11 @@ import '../components/logo'
 import '../components/svg'
 import '../utils/shared-styles'
 
-homeStyle()('home-styles');
+homeStyle()('home-styles')
 
 class Home extends PolymerElement {
     static get template() {
-      return html`
+        return html`
         <style include="common-styles home-styles"></style>   
         <div class="container">
             <div class="presentation__wrapper">
