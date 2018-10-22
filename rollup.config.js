@@ -6,6 +6,8 @@ import string from 'rollup-plugin-string'
 import { argv } from 'yargs'
 import { resolve } from 'path'
 
+import sassProcessor from './plugins/sass-processor'
+
 const plugins = [
   nodeResolve({jsnext: true}),
   commonjs(),
@@ -14,8 +16,11 @@ const plugins = [
     filename: 'index.html'
   }),
   string({
-    include: '**/*.svg'
-  })
+    include: [
+      '**/*.svg',
+    ]
+  }),
+  sassProcessor()
 ]
 
 if (argv.watch) {
