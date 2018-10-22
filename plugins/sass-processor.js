@@ -34,7 +34,7 @@ export default function svg ( options = {} ) {
       }
 
       // HACK to pass the compiled SASS as a default parameter to
-      // a inner function which is going to return a dom-module
+      // a inner function which is going to register the styles
       const exportee = `export default (css="${encodeURIComponent(css)}") => ${getDOMModule.toString()}`
 
       return { code: exportee, map: { mappings: '' } }
