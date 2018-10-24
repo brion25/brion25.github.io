@@ -1,0 +1,45 @@
+:host {
+  --link-border-width: 0;
+}
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+    display: inline-block;
+    position: relative;
+    color: var(--darker);
+
+    &:before {
+      content: ' ';
+      position: absolute;
+      border-bottom: 1px solid;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all 0.3s cubic-bezier(.17,.67,.83,.67);
+      width: var(--link-border-width);
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 15px;
+    margin-right: 5px;
+
+    my-svg {
+      --icon-size: 100%;
+      --icon-color: var(--darker);
+    }
+  }
+
+  &:hover .link__text {
+    --link-border-width: 100%;
+  }
+}

@@ -6,11 +6,11 @@ import '@polymer/app-route/app-route'
 import '@polymer/iron-pages/iron-pages'
 
 import './utils/shared-styles'
-import './components/nav'
+import './components/nav/nav'
 
 import { PolymerElement, html } from '@polymer/polymer/polymer-element'
 
-import { VIEW_HOME, VIEW_404 } from './utils/constants'
+import { VIEW_HOME, VIEW_CONTACT, VIEW_404 } from './utils/constants'
 
 class MyApp extends PolymerElement {
     static get template() {
@@ -57,6 +57,7 @@ class MyApp extends PolymerElement {
           <div class="content">
             <iron-pages selected="[[page]]" attr-for-selected="name" role="main">
                 <my-home name="home"></my-home>
+                <my-contact name="contact"></my-contact>
             </iron-pages>        
           </div>        
         </div>
@@ -85,7 +86,7 @@ class MyApp extends PolymerElement {
     _routePageChanged(page) {
         if (!page) {
             this.page = VIEW_HOME
-        } else if ([VIEW_HOME].includes(page)) {
+        } else if ([VIEW_HOME, VIEW_CONTACT].includes(page)) {
             this.page = page
         } else {
             this.page = VIEW_404
@@ -94,8 +95,12 @@ class MyApp extends PolymerElement {
 
     _pageChanged(page) {
         switch(page){
-        case VIEW_HOME:
-        import('./pages/home')
+            case VIEW_HOME:
+                import('./pages/home')
+                break
+            case VIEW_CONTACT:
+                import('./pages/contact')
+                break
         }
     }
 }

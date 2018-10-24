@@ -1,0 +1,95 @@
+:host {
+  --form-spacing: 10px;
+  --grid-template-columns: 1fr 1fr;
+  --grid-template-rows: 60px 80px 1fr 80px;
+  --form-notes-grid-row-start: 2;
+  --form-notes-grid-row-end: 4;
+  --form-notes-grid-column-start: 2;
+  --form-important-nodes-grid-column-end: 3;
+  --form-top-space: calc(var(--form-spacing) * 10);
+  --form-bottom-space: calc(var(--form-spacing) * 3);
+  --contact-message-padding: 0px;
+}
+
+.contact {
+  &__message {
+    padding: var(--contact-message-padding);
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: var(--grid-template-columns);
+    grid-template-rows: var(--grid-template-rows);
+    margin-top: var(--form-top-space);
+    margin-bottom: var(--form-bottom-space);
+    background: var(--darkest);
+    color: var(--light);
+  }
+
+  &__header {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: var(--form-important-nodes-grid-column-end);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light);
+    color: var(--lighter);
+  }
+
+  &__iron-input {
+    --primary-text-color: var(--lighter);
+    --paper-input-container-input-color: var(--lighter);
+    --paper-input-container-color: var(--light);
+    --secondary-text-color: var(--light);
+    padding: 0 var(--form-spacing);
+  }
+
+  &__form-notes {
+    grid-row-start: var(--form-notes-grid-row-start);
+    grid-row-end: var(--form-notes-grid-row-end);
+    grid-column-start: var(--form-notes-grid-column-start);
+  }
+
+  &__form-submit {
+    border-radius: 0;
+    margin: 0;
+    margin-top: calc(var(--form-spacing) * 2);
+    grid-column-start: 1;
+    grid-column-end: var(--form-important-nodes-grid-column-end);
+    background: var(--light);
+    color: var(--lighter);
+    text-transform: initial;
+
+    iron-icon {
+      margin-right: 5px;
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .contact {
+    &__message {
+      --contact-message-padding: 0 10px;
+    }
+
+    &__form {
+      --form-top-space: calc(var(--form-spacing) * 5);
+      --form-bottom-space: calc(var(--form-spacing) * 8);
+      --grid-template-columns: 1fr;
+      --grid-template-rows: 60px 80px 80px 1fr 80px;
+    }
+
+    &__form-notes {
+      --form-notes-grid-row-start: 4;
+      --form-notes-grid-row-end: 5;
+      --form-notes-grid-column-start: 1;
+    }
+
+    &__form-submit,
+    &__header {
+      --form-important-nodes-grid-column-end: 2;
+    }
+  }
+}

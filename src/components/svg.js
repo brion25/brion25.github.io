@@ -18,6 +18,7 @@ import twitter from '@fortawesome/fontawesome-free/svgs/brands/twitter.svg'
 import codepen from '@fortawesome/fontawesome-free/svgs/brands/codepen.svg'
 import medium from '@fortawesome/fontawesome-free/svgs/brands/medium.svg'
 import blogger from '@fortawesome/fontawesome-free/svgs/brands/blogger.svg'
+import linkedin from '@fortawesome/fontawesome-free/svgs/brands/linkedin.svg'
 
 import code from '@fortawesome/fontawesome-free/svgs/solid/code.svg'
 import database from '@fortawesome/fontawesome-free/svgs/solid/database.svg'
@@ -31,14 +32,10 @@ const ICON_MAP = {
     NoSQL: database,
     SQL: database,
     polymer: code,
-    mobx: code,
-    redux: code,
-    apollo: code,
-    graphql: code,
-    dart: code,
     html: htmlIcon,
     JS: js,
     AWS: aws,
+    linkedin,
     npm,
     git,
     github,
@@ -85,7 +82,7 @@ class SVG extends PolymerElement {
     connectedCallback() {
         super.connectedCallback()
 
-        const icon = ICON_MAP[this.icon] || ''
+        const icon = ICON_MAP[this.icon] || code
         const tag = document.createElement('p')
 
         tag.innerHTML = icon
