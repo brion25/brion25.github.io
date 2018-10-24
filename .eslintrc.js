@@ -24,5 +24,8 @@ module.exports = {
             "error",
             "never"
         ]
+    },
+    "globals": {
+        "ENV_MAILER_ID": true
     }
 };

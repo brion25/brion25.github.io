@@ -1,0 +1,52 @@
+app-header-layout {
+  z-index: 9999;
+}
+
+.nav {
+  background-color: var(--darkest);
+  box-shadow: 0 0px 2px var(--darker);
+
+  iron-selector {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.link {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: var(--lighter);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.iron-selected {
+    background-color: var(--lighter);
+    color: var(--darkest);
+  }
+}
+
+iron-icon {
+  margin-right: 5px;
+}
+
+@media only screen and (max-width: 750px) {
+  app-header-layout {
+    --layout-fixed-top_-_top: calc(100% + 5px);
+  }
+
+  .nav {
+    bottom: 0;
+    top: initial;
+    flex-direction: row;
+  }
+
+  .link {
+    flex: 1;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

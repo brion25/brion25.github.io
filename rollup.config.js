@@ -3,6 +3,7 @@ import nodeResolve from 'rollup-plugin-node-resolve'
 import html from 'rollup-plugin-fill-html'
 import serve from 'rollup-plugin-serve'
 import string from 'rollup-plugin-string'
+import replace from 'rollup-plugin-replace'
 import { argv } from 'yargs'
 import { resolve } from 'path'
 
@@ -20,7 +21,10 @@ const plugins = [
       '**/*.svg',
     ]
   }),
-  sassProcessor()
+  sassProcessor(),
+  replace({
+    ENV_MAILER_ID: JSON.stringify(argv['mailer-id'])
+  })
 ]
 
 if (argv.watch) {
@@ -32,6 +36,8 @@ if (argv.watch) {
     })
   )
 }
+
+console.log(argv)
 
 export default {
   entry: resolve(__dirname, './src/index.js'),

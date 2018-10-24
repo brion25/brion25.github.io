@@ -63,13 +63,14 @@ class Home extends PolymerElement {
                 value() {
                     return [
                         'JS',
-                        'java',
+                        'node',
                         'react',
                         'angular',
+                        'java',
+                        'SalesForce',
                         'dart',
                         'css',
                         'html',
-                        'node',
                         'graphql',
                         'apollo',
                         'sass',
