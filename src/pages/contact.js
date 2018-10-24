@@ -16,8 +16,8 @@ contactStyle()('contact-style')
 const DEFAULT_SEND_MSG = 'Send It'
 
 class Contact extends PolymerElement {
-  static get template() {
-    return html`
+    static get template() {
+        return html`
       <style include="common-styles contact-style"></style>
       <div class="contact">
         <h2>Contact Me</h2>
@@ -45,45 +45,45 @@ class Contact extends PolymerElement {
         </iron-form>
       </div>
     `
-  }
-
-  static get properties() {
-    return {
-      sendMsgBtn: {
-        type: String
-      },
-      disableSendMsgBtn: {
-        type: Boolean
-      }
     }
-  }
 
-  connectedCallback() {
-    super.connectedCallback()
-
-    this.sendMsgBtn = DEFAULT_SEND_MSG
-    this.disableSendMsgBtn = false
-  }
-
-  _submit() {
-    this.sendMsgBtn = DEFAULT_SEND_MSG
-    const form = this.$.contactForm
-
-    if (form.validate()) {
-      this.sendMsgBtn = 'Sending...'
-      this.disableSendMsgBtn = true
-      const body = form.serializeForm()
-      sendEmail(body)
-        .then(() => {
-          this.sendMsgBtn = 'Email Sent!'
-          this.disableSendMsgBtn = false
-        })
-        .catch(() => {
-          this.sendMsgBtn = 'Something went wrong, try again later...'
-          this.disableSendMsgBtn = false
-        })
+    static get properties() {
+        return {
+            sendMsgBtn: {
+                type: String
+            },
+            disableSendMsgBtn: {
+                type: Boolean
+            }
+        }
     }
-  }
+
+    connectedCallback() {
+        super.connectedCallback()
+
+        this.sendMsgBtn = DEFAULT_SEND_MSG
+        this.disableSendMsgBtn = false
+    }
+
+    _submit() {
+        this.sendMsgBtn = DEFAULT_SEND_MSG
+        const form = this.$.contactForm
+
+        if (form.validate()) {
+            this.sendMsgBtn = 'Sending...'
+            this.disableSendMsgBtn = true
+            const body = form.serializeForm()
+            sendEmail(body)
+                .then(() => {
+                    this.sendMsgBtn = 'Email Sent!'
+                    this.disableSendMsgBtn = false
+                })
+                .catch(() => {
+                    this.sendMsgBtn = 'Something went wrong, try again later...'
+                    this.disableSendMsgBtn = false
+                })
+        }
+    }
 }
 
 customElements.define('my-contact', Contact)

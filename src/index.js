@@ -95,12 +95,12 @@ class MyApp extends PolymerElement {
 
     _pageChanged(page) {
         switch(page){
-            case VIEW_HOME:
+        case VIEW_HOME:
                 import('./pages/home')
-                break
-            case VIEW_CONTACT:
+            break
+        case VIEW_CONTACT:
                 import('./pages/contact')
-                break
+            break
         }
     }
 }
