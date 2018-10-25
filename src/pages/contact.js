@@ -29,7 +29,7 @@ class Contact extends PolymerElement {
         </p>
         <iron-form id="contactForm" allow-redirect="false">
           <form class="contact__form">
-            <h3 class="contact__header">Contact me!</h3>
+            <h3 class="contact__header">Send me an Email!</h3>
             <paper-input class="contact__iron-input contact__form-input" name="recluiterName" label="Name" value="" required>
               <iron-icon icon="face" slot="prefix"></iron-icon>
             </paper-input>

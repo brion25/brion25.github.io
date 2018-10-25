@@ -22,8 +22,6 @@
     grid-template-rows: var(--grid-template-rows);
     margin-top: var(--form-top-space);
     margin-bottom: var(--form-bottom-space);
-    background: var(--darkest);
-    color: var(--light);
   }
 
   &__header {
@@ -34,15 +32,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--light);
-    color: var(--lighter);
+    color: var(--darkest);
+    border-bottom: 1px solid var(--darker);
+    box-shadow: 0 4px 2px -4px var(--darker);
   }
 
   &__iron-input {
-    --primary-text-color: var(--lighter);
-    --paper-input-container-input-color: var(--lighter);
-    --paper-input-container-color: var(--light);
-    --secondary-text-color: var(--light);
+    --primary-text-color: var(--darkest);
+    --paper-input-container-input-color: var(--darkest);
+    --paper-input-container-color: var(--darkest);
+    --secondary-text-color: var(--darkest);
     padding: 0 var(--form-spacing);
   }
 
@@ -59,8 +58,9 @@
     grid-column-start: 1;
     grid-column-end: var(--form-important-nodes-grid-column-end);
     background: var(--light);
-    color: var(--lighter);
+    color: var(--darkest);
     text-transform: initial;
+    box-shadow: 0 -3px 2px -2px var(--darker);
 
     iron-icon {
       margin-right: 5px;
