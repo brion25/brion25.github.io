@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./src",
-    "build": "rollup -c",
-    "travis": "cross-env npm run build -- --mailer-id=$MAILER_ID",
-    "build:watch": "rollup -c --watch",
+    "compile": "rollup -c",
+    "build": "cross-env npm run compile -- --mailer-id=$MAILER_ID",
+    "build:watch": "npm run compile -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
