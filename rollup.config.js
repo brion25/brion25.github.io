@@ -4,6 +4,7 @@ import html from 'rollup-plugin-fill-html'
 import serve from 'rollup-plugin-serve'
 import string from 'rollup-plugin-string'
 import replace from 'rollup-plugin-replace'
+import json from 'rollup-plugin-json'
 import { argv } from 'yargs'
 import { resolve } from 'path'
 
@@ -21,10 +22,11 @@ const plugins = [
       '**/*.svg',
     ]
   }),
-  sassProcessor(),
   replace({
     ENV_MAILER_ID: JSON.stringify(argv['mailer-id'])
-  })
+  }),
+  json(),
+  sassProcessor(),
 ]
 
 if (argv.watch) {

@@ -6,13 +6,7 @@ const styleElement = document.createElement('dom-module')
 styleElement.innerHTML = `
 <template>
    <style>
-    :host {
-      --pullman-green: #2B3A1A;
-      --kiwi: #93DD44;
-      --french-lime: #9EED49;
-      --inchworm: #A7EF5B;
-      --rich-lavender: #A26BEF;
-    
+    :host {    
       --vivid-cerulean: #00A8E8;
       --white: #FFFFFF;
       --cerulean: #007EA7;
@@ -22,8 +16,8 @@ styleElement.innerHTML = `
       --light: var(--vivid-cerulean);
       --lighter: var(--white);
       --dark: var(--cerulean);
-      --darkest: var(--rich-black);
       --darker: var(--prusian-blue);
+      --darkest: var(--rich-black);
     }
     
     h1, h2, h3, h4, h5, h6 {
