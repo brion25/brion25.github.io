@@ -1,6 +1,3 @@
-const BACKENDLESS_APP_ID = 'F1B988E2-FAC7-A27A-FF5C-EC00C0402A00'
-const BACKENDLESS_API_KEY = '92F296C8-2424-2159-FFB0-0824B95F1000'
-
 // Using CDN fiel since the NPM package is broken for Web
 const { Backendless } = window
 

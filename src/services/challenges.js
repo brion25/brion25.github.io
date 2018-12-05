@@ -1,3 +1,5 @@
+import showdown from 'showdown'
+
 import Backendless from '../adapters/Backendless'
 
 const backendless = new Backendless()
@@ -8,5 +10,12 @@ export const getChallenges = () => {
 
 export const getChallenge = id => {
   return backendless.getStorageData('challenges', { where: `id = '${id}'` })
-    .then(challenges => challenges[0] || {})
+    .then(challenges => {
+      const converter = new showdown.Converter()
+      const challenge = challenges[0] || {}
+
+      challenge.html = converter.makeHtml(challenge.description || '')
+
+      return challenge
+    })
 }

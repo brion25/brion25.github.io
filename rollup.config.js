@@ -23,7 +23,9 @@ const plugins = [
     ]
   }),
   replace({
-    ENV_MAILER_ID: JSON.stringify(argv['mailer-id'])
+    ENV_MAILER_ID: JSON.stringify(argv['mailer-id']),
+    BACKENDLESS_APP_ID: JSON.stringify(argv['backendless-app-id']),
+    BACKENDLESS_API_KEY: JSON.stringify(argv['backendless-api-key'])
   }),
   json(),
   sassProcessor(),

@@ -24,6 +24,7 @@ class Challenge extends PolymerElement {
         <div class="challenge__image-wrapper">
           <img class="challenge__image" src="{{challenge.image}}" />        
         </div>
+        <div class="challenge__description"></div>
       </div>
     `
   }
@@ -48,7 +49,11 @@ class Challenge extends PolymerElement {
 
         challenge.createdAt = moment(created).format('MMM Do YYYY')
         challenge.updatedAt = moment(updated || created).fromNow()
-        console.log(challenge)
+
+        const container = document.createElement('p')
+        container.innerHTML = challenge.html
+
+        this.shadowRoot.querySelector('.challenge__description').appendChild(container)
         this.challenge = challenge
       })
     }

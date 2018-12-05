@@ -23,9 +23,9 @@ class Challenges extends PolymerElement {
                 <div class="card-content">{{record.abstractDescription}}</div>
                 <div class="card-actions">
                   <a href="#/challenge/{{record.id}}">
-                    <paper-button>Share</paper-button>
+                    <paper-button>Explore</paper-button>
                   </a>
-                  <paper-button>Explore</paper-button>
+                  <paper-button on-click="_copyClipboard">Share</paper-button>
                 </div>
               </paper-card>        
             </template>
@@ -47,6 +47,22 @@ class Challenges extends PolymerElement {
     super.connectedCallback()
 
     getChallenges().then(challenges => this.records = challenges)
+  }
+
+  _copyClipboard(e) {
+    const input = document.createElement('input')
+    const href = window.location.href
+    input.value = `${href.substr(0, href.length - 1)}/${e.model.record.id}`
+
+    document.body.appendChild(input)
+
+    input.focus()
+    input.select()
+    document.execCommand('copy')
+
+    document.body.removeChild(input)
+
+    alert('URL copied to Clipboard!')
   }
 }
 
