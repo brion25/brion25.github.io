@@ -10,8 +10,8 @@ import { getChallenges } from '../services/challenges'
 challengesStyles()('challenges-style')
 
 class Challenges extends PolymerElement {
-  static get template() {
-    return html`
+    static get template() {
+        return html`
       <style include="common-styles challenges-style"></style>
       <div class="challenges">
         <h2>Are you ready to test yous skills?</h2>
@@ -33,37 +33,37 @@ class Challenges extends PolymerElement {
         </div>
       </div>
     `
-  }
-
-  static get properties() {
-    return {
-      records: {
-        type: Array
-      }
     }
-  }
 
-  connectedCallback() {
-    super.connectedCallback()
+    static get properties() {
+        return {
+            records: {
+                type: Array
+            }
+        }
+    }
 
-    getChallenges().then(challenges => this.records = challenges)
-  }
+    connectedCallback() {
+        super.connectedCallback()
 
-  _copyClipboard(e) {
-    const input = document.createElement('input')
-    const href = window.location.href
-    input.value = `${href.substr(0, href.length - 1)}/${e.model.record.id}`
+        getChallenges().then(challenges => this.records = challenges)
+    }
 
-    document.body.appendChild(input)
+    _copyClipboard(e) {
+        const input = document.createElement('input')
+        const href = window.location.href
+        input.value = `${href.substr(0, href.length - 1)}/${e.model.record.id}`
 
-    input.focus()
-    input.select()
-    document.execCommand('copy')
+        document.body.appendChild(input)
 
-    document.body.removeChild(input)
+        input.focus()
+        input.select()
+        document.execCommand('copy')
 
-    alert('URL copied to Clipboard!')
-  }
+        document.body.removeChild(input)
+
+        alert('URL copied to Clipboard!')
+    }
 }
 
 customElements.define('my-challenges', Challenges)
