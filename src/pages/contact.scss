@@ -57,8 +57,8 @@
     margin-top: calc(var(--form-spacing) * 2);
     grid-column-start: 1;
     grid-column-end: var(--form-important-nodes-grid-column-end);
-    background: var(--light);
-    color: var(--darkest);
+    background-color: var(--darkest);
+    color: var(--lighter);
     text-transform: initial;
     box-shadow: 0 -3px 2px -2px var(--darker);
 

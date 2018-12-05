@@ -10,7 +10,7 @@ import './components/nav/nav'
 
 import { PolymerElement, html } from '@polymer/polymer/polymer-element'
 
-import { VIEW_HOME, VIEW_CONTACT, VIEW_404 } from './utils/constants'
+import { VIEW_HOME, VIEW_CONTACT, VIEW_CHALLENGES, VIEW_CHALLENGE, VIEW_404 } from './utils/constants'
 
 class MyApp extends PolymerElement {
     static get template() {
@@ -50,6 +50,11 @@ class MyApp extends PolymerElement {
           pattern="/:view"
           data="{{routeData}}"
           tail="{{subroute}}"></app-route>
+          <app-route
+            route="{{subroute}}"
+            pattern="/:id"
+            data="{{subrouteData}}">
+          </app-route>
         
         <my-nav page$="{{page}}"></my-nav>
         
@@ -58,6 +63,8 @@ class MyApp extends PolymerElement {
             <iron-pages selected="[[page]]" attr-for-selected="name" role="main">
                 <my-home name="home"></my-home>
                 <my-contact name="contact"></my-contact>
+                <my-challenges name="challenges"></my-challenges>
+                <my-challenge name="challenge" params="{{subrouteData}}"></my-challenge>
             </iron-pages>        
           </div>        
         </div>
@@ -73,7 +80,8 @@ class MyApp extends PolymerElement {
                 notify: true,
             },
             routeData: Object,
-            subroute: Object
+            subroute: Object,
+            subrouteData: Object
         }
     }
 
@@ -86,7 +94,7 @@ class MyApp extends PolymerElement {
     _routePageChanged(page) {
         if (!page) {
             this.page = VIEW_HOME
-        } else if ([VIEW_HOME, VIEW_CONTACT].includes(page)) {
+        } else if ([VIEW_HOME, VIEW_CONTACT, VIEW_CHALLENGES, VIEW_CHALLENGE].includes(page)) {
             this.page = page
         } else {
             this.page = VIEW_404
@@ -100,6 +108,12 @@ class MyApp extends PolymerElement {
             break
         case VIEW_CONTACT:
                 import('./pages/contact')
+            break
+        case VIEW_CHALLENGES:
+                import('./pages/challenges')
+            break
+        case VIEW_CHALLENGE:
+                import('./pages/challenge/challenge')
             break
         }
     }

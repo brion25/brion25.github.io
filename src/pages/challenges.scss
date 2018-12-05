@@ -1,0 +1,28 @@
+:host {
+  --challenges-records-grid-columns-template: 1fr 1fr 1fr;
+  --challenges-records-grid-gap: 20px;
+  --challenges-min-height: 0;
+}
+
+.challenges {
+  min-height: var(--challenges-min-height);
+
+  &__records {
+    display: grid;
+    grid-template-columns: var(--challenges-records-grid-columns-template);
+    grid-column-gap: var(--challenges-records-grid-gap);
+    grid-row-gap: var(--challenges-records-grid-gap);
+    padding: var(--challenges-records-grid-gap) 0;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .challenges {
+    --challenges-min-height: 110vh;
+
+    &__records {
+      padding: var(--challenges-records-grid-gap);
+      --challenges-records-grid-columns-template: 1fr;
+    }
+  }
+}

@@ -26,6 +26,8 @@ module.exports = {
         ]
     },
     "globals": {
-        "ENV_MAILER_ID": true
+        "ENV_MAILER_ID": true,
+        "BACKENDLESS_APP_ID": true,
+        "BACKENDLESS_API_KEY": true
     }
 };
